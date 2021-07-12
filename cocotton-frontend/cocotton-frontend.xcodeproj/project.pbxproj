@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8B51BC192688DA96008796D7 /* cocotton_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51BC182688DA96008796D7 /* cocotton_frontendApp.swift */; };
-		8B51BC1B2688DA96008796D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51BC1A2688DA96008796D7 /* ContentView.swift */; };
 		8B51BC1D2688DA97008796D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51BC1C2688DA97008796D7 /* Assets.xcassets */; };
 		8B51BC202688DA97008796D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51BC1F2688DA97008796D7 /* Preview Assets.xcassets */; };
 		8B51BC2B2688DA97008796D7 /* cocotton_frontendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51BC2A2688DA97008796D7 /* cocotton_frontendTests.swift */; };
 		8B51BC362688DA97008796D7 /* cocotton_frontendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51BC352688DA97008796D7 /* cocotton_frontendUITests.swift */; };
+		8B540D72269B78FD00B3DC2B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B540D71269B78FD00B3DC2B /* LoadingView.swift */; };
 		8B54BFBA268B27A8007EA961 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54BFB9268B27A8007EA961 /* Category.swift */; };
 		8B54BFBF268B3A19007EA961 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54BFBE268B3A19007EA961 /* Role.swift */; };
 		8B5828FE2689178F00C9F749 /* Ingredient .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5828FD2689178F00C9F749 /* Ingredient .swift */; };
@@ -49,7 +49,6 @@
 /* Begin PBXFileReference section */
 		8B51BC152688DA96008796D7 /* cocotton-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cocotton-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B51BC182688DA96008796D7 /* cocotton_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocotton_frontendApp.swift; sourceTree = "<group>"; };
-		8B51BC1A2688DA96008796D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B51BC1C2688DA97008796D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B51BC1F2688DA97008796D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B51BC212688DA97008796D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		8B51BC312688DA97008796D7 /* cocotton-frontendUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cocotton-frontendUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B51BC352688DA97008796D7 /* cocotton_frontendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocotton_frontendUITests.swift; sourceTree = "<group>"; };
 		8B51BC372688DA97008796D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B540D71269B78FD00B3DC2B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8B54BFB9268B27A8007EA961 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		8B54BFBE268B3A19007EA961 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		8B5828FD2689178F00C9F749 /* Ingredient .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient .swift"; sourceTree = "<group>"; };
@@ -194,10 +194,10 @@
 		8B62B27C268BC4580046C07C /* view */ = {
 			isa = PBXGroup;
 			children = (
-				8B51BC1A2688DA96008796D7 /* ContentView.swift */,
 				8B62B2E5269AF2560046C07C /* LoginView.swift */,
 				8B62B2F2269B4B870046C07C /* RegisterView.swift */,
 				8B62B2F7269B4DEF0046C07C /* MainView.swift */,
+				8B540D71269B78FD00B3DC2B /* LoadingView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 				8B5828FE2689178F00C9F749 /* Ingredient .swift in Sources */,
 				8B62B287268BC7150046C07C /* FileTemp.swift in Sources */,
 				8B62B268268BBEE00046C07C /* Comment.swift in Sources */,
-				8B51BC1B2688DA96008796D7 /* ContentView.swift in Sources */,
+				8B540D72269B78FD00B3DC2B /* LoadingView.swift in Sources */,
 				8B62B26D268BBEEE0046C07C /* Profile.swift in Sources */,
 				8B51BC192688DA96008796D7 /* cocotton_frontendApp.swift in Sources */,
 				8B62B2EE269B27F20046C07C /* AuthController.swift in Sources */,
