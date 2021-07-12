@@ -8,11 +8,21 @@
 import Foundation
 
 struct Profile: Codable  {
-    let id: String?
-    let lastName: String?
-    let firstName: String?
-    let username: String?
-    let email: String?
-    let password: String?
-    let birthDate: String?
+    var id: String?
+    var lastName: String?
+    var firstName: String?
+    var username: String?
+    var email: String?
+    var password: String?
+    var birthDate: String?
+    
+    init(lastName: String, firstName: String, email: String, username: String, password: String, birthDate: String){
+        self.lastName = lastName
+        self.firstName = firstName
+        self.email = email
+        self.username = username
+        self.password = password
+        self.birthDate = birthDate
+    }
+    
 }

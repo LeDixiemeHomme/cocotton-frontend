@@ -8,8 +8,8 @@
 import Foundation
 
 struct Comment: Codable  {
-    let id: String?
-    let title: String?
-    let content: String?
-    let profileId: String?
+    var id: String?
+    var title: String?
+    var content: String?
+    var profileId: String?
 }
