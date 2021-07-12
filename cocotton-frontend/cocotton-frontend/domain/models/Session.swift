@@ -8,8 +8,8 @@
 import Foundation
 
 struct Session: Codable {
-    let id: String?
-    let createdAt: Date?
-    let token: String?
-    let userId: String?
+    var id: String?
+    var createdAt: Date?
+    var token: String?
+    var userId: String?
 }

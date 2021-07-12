@@ -8,9 +8,9 @@
 import Foundation
 
 struct Recipe: Codable  {
-    let id: String?
-    let name: String?
-    let ingredients: [Ingredient]?
-    let profileId: String?
-    let steps: [String]?
+    var id: String?
+    var name: String?
+    var ingredients: [Ingredient]?
+    var profileId: String?
+    var steps: [String]?
 }
