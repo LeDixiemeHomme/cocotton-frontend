@@ -38,24 +38,36 @@ class AuthController {
         return profile_id
     }
     
-    func login(username: String, password: String) -> String? {
+    func login(loginCredential: LoginCredential) -> String? {
+        print("login")
+        print("loginCredential")
+        print(loginCredential)
         
         var responseToken: String? = nil
         
+        let semaphore = DispatchSemaphore(value: 0)
+        
         rest.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
-        rest.httpBodyParameters.add(value: username, forKey: "username")
-        rest.httpBodyParameters.add(value: password, forKey: "password")
+        rest.httpBodyParameters.add(value: loginCredential.username, forKey: "username")
+        rest.httpBodyParameters.add(value: loginCredential.password, forKey: "password")
         
         guard let url = URL(string: API_BASE_URL + AUTH_TARGET + "login") else { return nil }
+        print("url")
+        print(url)
         
-        rest.makeRequest(toURL: url, withHttpMethod: .post, token: "no_token") { (results) in
+        rest.makeRequest(toURL: url, withHttpMethod: .post, token: nil) { (results) in
+            print("results")
+            print(results)
             guard let response = results.response else { return }
+            print("response")
+            print(response)
             if response.httpStatusCode == 201 {
                 guard let authorization: String = response.headers.value(forKey: "Authorization") else { return }
                 responseToken = authorization
+                semaphore.signal()
             }
         }
-        
+        _ = semaphore.wait(wallTimeout: .distantFuture)
         return responseToken
     }
 }

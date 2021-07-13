@@ -35,6 +35,7 @@ struct LoginView: View {
                     HStack {
                         Image(systemName: "person.2.fill").foregroundColor(.black)
                         TextField("Username", text: $username)
+                            .autocapitalization(.none)
                         Text("*").foregroundColor(.red)
                     }
                     .padding(.all, 20)
@@ -45,6 +46,7 @@ struct LoginView: View {
                     HStack {
                         Image(systemName: "lock.fill").foregroundColor(.black)
                         SecureField("Password", text: $password)
+                            .autocapitalization(.none)
                         Text("*").foregroundColor(.red)
                     }
                     .padding(.all, 20)

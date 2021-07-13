@@ -78,8 +78,8 @@ struct LoadingView: View {
     
     func tryLogin(loginCredential: LoginCredential) {
         print("tryLogin")
-        print(loginCredential)
-        if let _unwrapped: String = authController.login(username: loginCredential.username, password: loginCredential.password) {
+        if let _unwrapped: String = authController.login(loginCredential: loginCredential) {
+            print("_unwrapped")
             print(_unwrapped)
         } else {
             print("else")

@@ -8,7 +8,7 @@
 import Foundation
 
 let TOKEN: String = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWxsZWIyQGdtYWlsLmNvbSIsInJvbGVzIjpbeyJpZCI6IjYwOTgwMTA0NDRlYjY4MWU4MDQxODE5MiIsInJvbGUiOiJVU0VSIn1dLCJpYXQiOjE2MjU5OTU0MDEsImV4cCI6MTYyNTk5OTAwMX0.BmvMCYp8ERmtK9EB7DZDMY3gK-9ICVYbJOR0e3ohAUl9J61fVIwvom1mogu226rkOjgp1vz7hJxWe2ZLELB3CQ"
-let API_BASE_URL: String = "http://localhost:3010/api/v1/"
+let API_BASE_URL: String = "http://cocotton-env.eba-cxq5ftbc.us-east-2.elasticbeanstalk.com/"
 
 class RestManager {
     
@@ -27,12 +27,25 @@ class RestManager {
     
     func makeRequest(toURL url: URL,
                      withHttpMethod httpMethod: HttpMethod,
-                     token: String,
+                     token: String?,
                      completion: @escaping (_ result: Results) -> Void) {
         
+        print("url")
+        print(url)
+        print("httpMethod")
+        print(httpMethod)
+        print("token")
+        print(token)
+        
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            print("DispatchQueue")
             let targetURL = self?.addURLQueryParameters(toURL: url)
             let httpBody = self?.getHttpBody()
+            
+            print("targetURL")
+            print(targetURL)
+            print("httpBody")
+            print(httpBody)
             
             guard let request = self?.prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod, token: token) else
             {
@@ -70,7 +83,9 @@ class RestManager {
     // MARK: - Private Methods
     
     private func addURLQueryParameters(toURL url: URL) -> URL {
+        print("addURLQueryParameters")
         if urlQueryParameters.totalItems() > 0 {
+            print("addURLQueryParameters if ")
             guard var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return url }
             var queryItems = [URLQueryItem]()
             for (key, value) in urlQueryParameters.allValues() {
@@ -84,7 +99,8 @@ class RestManager {
             guard let updatedURL = urlComponents.url else { return url }
             return updatedURL
         }
-        
+        print("addURLQueryParameters else ")
+        print(url)
         return url
     }
     
@@ -105,13 +121,19 @@ class RestManager {
     
     
     
-    private func prepareRequest(withURL url: URL?, httpBody: Data?, httpMethod: HttpMethod, token: String) -> URLRequest? {
+    private func prepareRequest(withURL url: URL?, httpBody: Data?, httpMethod: HttpMethod, token: String?) -> URLRequest? {
+        print("prepareRequest")
+        print("url")
+        print(url)
         guard let url = url else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        if let validToken: String = token {
+            request.setValue( "Bearer \(validToken)", forHTTPHeaderField: "Authorization")
+        }
         
         for (header, value) in requestHttpHeaders.allValues() {
             request.setValue(value, forHTTPHeaderField: header)
