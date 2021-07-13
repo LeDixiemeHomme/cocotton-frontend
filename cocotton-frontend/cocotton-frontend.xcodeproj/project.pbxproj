@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27CCA77E64592EBFA8C7B186 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39CED49852839F2EA9802F8 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework */; };
 		8B51BC192688DA96008796D7 /* cocotton_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51BC182688DA96008796D7 /* cocotton_frontendApp.swift */; };
 		8B51BC1D2688DA97008796D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51BC1C2688DA97008796D7 /* Assets.xcassets */; };
 		8B51BC202688DA97008796D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51BC1F2688DA97008796D7 /* Preview Assets.xcassets */; };
@@ -27,6 +28,8 @@
 		8B62B2EE269B27F20046C07C /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2ED269B27F20046C07C /* AuthController.swift */; };
 		8B62B2F3269B4B870046C07C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2F2269B4B870046C07C /* RegisterView.swift */; };
 		8B62B2F8269B4DEF0046C07C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2F7269B4DEF0046C07C /* MainView.swift */; };
+		BC9934B1015799D3DD873081 /* Pods_cocotton_frontend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F002B7EECC484F9F7B23032 /* Pods_cocotton_frontend.framework */; };
+		EF59DD7F597771D12E6CF06E /* Pods_cocotton_frontendTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915B80DB18DEB840C4429C1 /* Pods_cocotton_frontendTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		083CF42704B399591FFEA7CA /* Pods-cocotton-frontendTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontendTests.release.xcconfig"; path = "Target Support Files/Pods-cocotton-frontendTests/Pods-cocotton-frontendTests.release.xcconfig"; sourceTree = "<group>"; };
+		0F002B7EECC484F9F7B23032 /* Pods_cocotton_frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocotton_frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A7773F292026DC1F0F8A249 /* Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig"; path = "Target Support Files/Pods-cocotton-frontend-cocotton-frontendUITests/Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B51BC152688DA96008796D7 /* cocotton-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cocotton-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B51BC182688DA96008796D7 /* cocotton_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocotton_frontendApp.swift; sourceTree = "<group>"; };
 		8B51BC1C2688DA97008796D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +79,12 @@
 		8B62B2ED269B27F20046C07C /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		8B62B2F2269B4B870046C07C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8B62B2F7269B4DEF0046C07C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		965CE6BF5DCCC0ECC2C79F50 /* Pods-cocotton-frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontend.release.xcconfig"; path = "Target Support Files/Pods-cocotton-frontend/Pods-cocotton-frontend.release.xcconfig"; sourceTree = "<group>"; };
+		D915B80DB18DEB840C4429C1 /* Pods_cocotton_frontendTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocotton_frontendTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC2B370222060F6E3BA9141F /* Pods-cocotton-frontend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontend.debug.xcconfig"; path = "Target Support Files/Pods-cocotton-frontend/Pods-cocotton-frontend.debug.xcconfig"; sourceTree = "<group>"; };
+		E39CED49852839F2EA9802F8 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocotton_frontend_cocotton_frontendUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA6A8CCE96A3FFF08EB46C2A /* Pods-cocotton-frontend-cocotton-frontendUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontend-cocotton-frontendUITests.release.xcconfig"; path = "Target Support Files/Pods-cocotton-frontend-cocotton-frontendUITests/Pods-cocotton-frontend-cocotton-frontendUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ED581000E666C1AB118DCC43 /* Pods-cocotton-frontendTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontendTests.debug.xcconfig"; path = "Target Support Files/Pods-cocotton-frontendTests/Pods-cocotton-frontendTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9934B1015799D3DD873081 /* Pods_cocotton_frontend.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF59DD7F597771D12E6CF06E /* Pods_cocotton_frontendTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,12 +108,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27CCA77E64592EBFA8C7B186 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236EBB44AE5D816018A56C6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC2B370222060F6E3BA9141F /* Pods-cocotton-frontend.debug.xcconfig */,
+				965CE6BF5DCCC0ECC2C79F50 /* Pods-cocotton-frontend.release.xcconfig */,
+				8A7773F292026DC1F0F8A249 /* Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig */,
+				EA6A8CCE96A3FFF08EB46C2A /* Pods-cocotton-frontend-cocotton-frontendUITests.release.xcconfig */,
+				ED581000E666C1AB118DCC43 /* Pods-cocotton-frontendTests.debug.xcconfig */,
+				083CF42704B399591FFEA7CA /* Pods-cocotton-frontendTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8B51BC0C2688DA96008796D7 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +136,8 @@
 				8B51BC292688DA97008796D7 /* cocotton-frontendTests */,
 				8B51BC342688DA97008796D7 /* cocotton-frontendUITests */,
 				8B51BC162688DA96008796D7 /* Products */,
+				236EBB44AE5D816018A56C6E /* Pods */,
+				F04E278F35AC4B6CBF5B7330 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +243,16 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		F04E278F35AC4B6CBF5B7330 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F002B7EECC484F9F7B23032 /* Pods_cocotton_frontend.framework */,
+				E39CED49852839F2EA9802F8 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework */,
+				D915B80DB18DEB840C4429C1 /* Pods_cocotton_frontendTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,9 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B51BC3A2688DA97008796D7 /* Build configuration list for PBXNativeTarget "cocotton-frontend" */;
 			buildPhases = (
+				32F9F7DC1D0311532AB6E239 /* [CP] Check Pods Manifest.lock */,
 				8B51BC112688DA96008796D7 /* Sources */,
 				8B51BC122688DA96008796D7 /* Frameworks */,
 				8B51BC132688DA96008796D7 /* Resources */,
+				2AD88E22CEAE35C55749E132 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +279,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B51BC3D2688DA97008796D7 /* Build configuration list for PBXNativeTarget "cocotton-frontendTests" */;
 			buildPhases = (
+				66B7654B9A1423B0DD9E6048 /* [CP] Check Pods Manifest.lock */,
 				8B51BC222688DA97008796D7 /* Sources */,
 				8B51BC232688DA97008796D7 /* Frameworks */,
 				8B51BC242688DA97008796D7 /* Resources */,
@@ -254,9 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B51BC402688DA97008796D7 /* Build configuration list for PBXNativeTarget "cocotton-frontendUITests" */;
 			buildPhases = (
+				888C8AE0ABE8CB443C99E2CE /* [CP] Check Pods Manifest.lock */,
 				8B51BC2D2688DA97008796D7 /* Sources */,
 				8B51BC2E2688DA97008796D7 /* Frameworks */,
 				8B51BC2F2688DA97008796D7 /* Resources */,
+				4075ED5B197CF1C006F3B932 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,6 +381,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2AD88E22CEAE35C55749E132 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cocotton-frontend/Pods-cocotton-frontend-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cocotton-frontend/Pods-cocotton-frontend-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cocotton-frontend/Pods-cocotton-frontend-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32F9F7DC1D0311532AB6E239 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cocotton-frontend-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4075ED5B197CF1C006F3B932 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cocotton-frontend-cocotton-frontendUITests/Pods-cocotton-frontend-cocotton-frontendUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cocotton-frontend-cocotton-frontendUITests/Pods-cocotton-frontend-cocotton-frontendUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cocotton-frontend-cocotton-frontendUITests/Pods-cocotton-frontend-cocotton-frontendUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66B7654B9A1423B0DD9E6048 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cocotton-frontendTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		888C8AE0ABE8CB443C99E2CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cocotton-frontend-cocotton-frontendUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B51BC112688DA96008796D7 /* Sources */ = {
@@ -510,6 +659,7 @@
 		};
 		8B51BC3B2688DA97008796D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC2B370222060F6E3BA9141F /* Pods-cocotton-frontend.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -531,6 +681,7 @@
 		};
 		8B51BC3C2688DA97008796D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 965CE6BF5DCCC0ECC2C79F50 /* Pods-cocotton-frontend.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -552,6 +703,7 @@
 		};
 		8B51BC3E2688DA97008796D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED581000E666C1AB118DCC43 /* Pods-cocotton-frontendTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -573,6 +725,7 @@
 		};
 		8B51BC3F2688DA97008796D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083CF42704B399591FFEA7CA /* Pods-cocotton-frontendTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -594,6 +747,7 @@
 		};
 		8B51BC412688DA97008796D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A7773F292026DC1F0F8A249 /* Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -613,6 +767,7 @@
 		};
 		8B51BC422688DA97008796D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA6A8CCE96A3FFF08EB46C2A /* Pods-cocotton-frontend-cocotton-frontendUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_cocotton_frontend_cocotton_frontendUITests {
+  umbrella header "Pods-cocotton-frontend-cocotton-frontendUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
