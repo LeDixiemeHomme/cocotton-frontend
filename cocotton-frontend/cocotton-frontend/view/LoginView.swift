@@ -122,19 +122,15 @@ struct LoginView: View {
     }
     
     func viewBehavior() {
-        print("viewBehave")
         if username != "" && password != "" {
             isGoodForLoad = true
-            print("isGoodForLoad = " + isGoodForLoad.description)
         } else {
             emptyMandatoryFields = true
-            print("emptyMandatoryFields = " + emptyMandatoryFields.description)
         }
     }
     
     func displayWrongCredentials() {
         isWrongCredentials = true
-        print("isWrongCredentials = " + isWrongCredentials.description)
     }
     
 }
