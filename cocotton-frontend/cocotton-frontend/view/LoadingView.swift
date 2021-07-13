@@ -16,6 +16,7 @@ struct LoadingView: View {
     @State var textAction: String
     
     @State public var isCredentialsWrong = false
+    @State public var isCredentialsCorrect = false
     
     private let authController: AuthController = AuthController()
     
@@ -66,6 +67,11 @@ struct LoadingView: View {
                     label: {
                 })
                 
+                NavigationLink(
+                    destination: MainView(), isActive: $isCredentialsCorrect,
+                    label: {
+                })
+                
             }
             .background(
                 Image("loading_background")
@@ -77,27 +83,21 @@ struct LoadingView: View {
     }
     
     func tryLogin(loginCredential: LoginCredential) {
-        print("tryLogin")
-        print(loginCredential)
-        if let _unwrapped: String = authController.login(username: loginCredential.username, password: loginCredential.password) {
-            print(_unwrapped)
+        if let _unwrapped: String = authController.login(loginCredential: loginCredential) {
+            // placer le token dans le userdata ?? ou ailleurs
+            isCredentialsCorrect = true
         } else {
-            print("else")
             isCredentialsWrong = true
-            print("isCredentialsWrong = " + isCredentialsWrong.description)
         }
     }
     
     func tryRegister(registerCredential: RegisterCredential) {
-        print("tryRegister")
         let dateFormatter = DateFormatter()
         let profile: Profile = Profile(lastName: registerCredential.lastName, firstName: registerCredential.firstName, email: registerCredential.email, username: registerCredential.username, password: registerCredential.password, birthDate: dateFormatter.string(from: registerCredential.birthDate))
         if let _unwrapped: String = authController.register(profile: profile) {
             print(_unwrapped)
         } else {
-            print("else")
             isCredentialsWrong = true
-            print("isCredentialsWrong = " + isCredentialsWrong.description)
         }
     }
 }

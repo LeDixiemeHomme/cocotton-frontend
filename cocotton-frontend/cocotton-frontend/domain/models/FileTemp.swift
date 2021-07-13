@@ -14,3 +14,8 @@ struct FileTemp: Codable {
     var creationDate: String?
     var runDate: String?
 }
+
+
+struct UPToken: Codable {
+    var token: String?
+}

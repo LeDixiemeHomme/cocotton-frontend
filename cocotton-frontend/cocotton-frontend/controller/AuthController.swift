@@ -38,24 +38,37 @@ class AuthController {
         return profile_id
     }
     
-    func login(username: String, password: String) -> String? {
-        
+    func login(loginCredential: LoginCredential) -> String? {
         var responseToken: String? = nil
+        let semaphore = DispatchSemaphore(value: 0)
         
         rest.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
-        rest.httpBodyParameters.add(value: username, forKey: "username")
-        rest.httpBodyParameters.add(value: password, forKey: "password")
+        rest.httpBodyParameters.add(value: loginCredential.username, forKey: "email")
+        rest.httpBodyParameters.add(value: loginCredential.password, forKey: "password")
         
         guard let url = URL(string: API_BASE_URL + AUTH_TARGET + "login") else { return nil }
-        
-        rest.makeRequest(toURL: url, withHttpMethod: .post, token: "no_token") { (results) in
+        rest.makeRequest(toURL: url, withHttpMethod: .post, token: nil) { (results) in
+            
             guard let response = results.response else { return }
-            if response.httpStatusCode == 201 {
-                guard let authorization: String = response.headers.value(forKey: "Authorization") else { return }
-                responseToken = authorization
+            if response.httpStatusCode == 200 {
+                if let data = results.data {
+                    
+//                    guard let authorization: String = response.headers.value(forKey: "Authorization") else {
+//                        semaphore.signal()
+//                        return
+//                    }
+//                    responseToken = authorization
+//                    semaphore.signal()
+                    
+                    let decoder = JSONDecoder()
+                    if let uptoken: UPToken = try? decoder.decode(UPToken.self, from: data){
+                        responseToken = uptoken.token
+                    } else { return }
+                    semaphore.signal()
+                }
             }
         }
-        
+        _ = semaphore.wait(wallTimeout: .distantFuture)
         return responseToken
     }
 }

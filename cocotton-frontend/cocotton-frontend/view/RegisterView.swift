@@ -39,6 +39,7 @@ struct RegisterView: View {
                     HStack {
                         Image(systemName: "person.2.fill").foregroundColor(.black)
                         TextField("Username", text: $username)
+                            .autocapitalization(.none)
                         Text("*").foregroundColor(.red)
                     }
                     .padding(.all, 10)
@@ -49,6 +50,7 @@ struct RegisterView: View {
                     HStack {
                         Image(systemName: "lock.fill").foregroundColor(.black)
                         SecureField("Password", text: $password)
+                            .autocapitalization(.none)
                         Text("*").foregroundColor(.red)
                     }
                     .padding(.all, 10)
@@ -59,6 +61,7 @@ struct RegisterView: View {
                     HStack {
                         Image(systemName: "envelope.fill").foregroundColor(.black)
                         TextField("Email adress", text: $email)
+                            .autocapitalization(.none)
                         Text("*").foregroundColor(.red)
                     }
                     .padding(.all, 10)
@@ -69,6 +72,7 @@ struct RegisterView: View {
                     HStack {
                         Image(systemName: "person.circle.fill").foregroundColor(.black)
                         TextField("First name", text: $firstName)
+                            .autocapitalization(.none)
                         Text("*").foregroundColor(.red)
                     }
                     .padding(.all, 10)
@@ -79,6 +83,7 @@ struct RegisterView: View {
                     HStack {
                         Image(systemName: "person.circle.fill").foregroundColor(.black)
                         TextField("Last name", text: $lastName)
+                            .autocapitalization(.none)
                         Text("*").foregroundColor(.red)
                     }
                     .padding(.all, 10)

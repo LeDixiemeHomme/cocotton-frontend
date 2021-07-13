@@ -27,7 +27,7 @@ class RestManager {
     
     func makeRequest(toURL url: URL,
                      withHttpMethod httpMethod: HttpMethod,
-                     token: String,
+                     token: String?,
                      completion: @escaping (_ result: Results) -> Void) {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
@@ -84,7 +84,6 @@ class RestManager {
             guard let updatedURL = urlComponents.url else { return url }
             return updatedURL
         }
-        
         return url
     }
     
@@ -105,13 +104,16 @@ class RestManager {
     
     
     
-    private func prepareRequest(withURL url: URL?, httpBody: Data?, httpMethod: HttpMethod, token: String) -> URLRequest? {
+    private func prepareRequest(withURL url: URL?, httpBody: Data?, httpMethod: HttpMethod, token: String?) -> URLRequest? {
         guard let url = url else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        if let validToken: String = token {
+            request.setValue( "Bearer \(validToken)", forHTTPHeaderField: "Authorization")
+        }
         
         for (header, value) in requestHttpHeaders.allValues() {
             request.setValue(value, forHTTPHeaderField: header)
