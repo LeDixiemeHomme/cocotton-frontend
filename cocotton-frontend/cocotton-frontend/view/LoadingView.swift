@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftKeychainWrapper
 
 struct LoadingView: View {
     
@@ -19,6 +20,7 @@ struct LoadingView: View {
     @State public var isCredentialsCorrect = false
     
     private let authController: AuthController = AuthController()
+    private let profileController: ProfileController = ProfileController()
     
     var body: some View {
         
@@ -83,9 +85,23 @@ struct LoadingView: View {
     }
     
     func tryLogin(loginCredential: LoginCredential) {
-        if let _unwrapped: String = authController.login(loginCredential: loginCredential) {
-            // placer le token dans le userdata ?? ou ailleurs
-            isCredentialsCorrect = true
+        if let unwrappedToken: String = authController.login(loginCredential: loginCredential) {
+            
+            KeychainWrapper.standard[.tokenSession] = unwrappedToken
+            
+            if let profileId: String = KeychainWrapper.standard[.profileId] {
+                isCredentialsCorrect = true
+            } else {
+                textAction = "Updating local data"
+                if let fetchedProfile: Profile = profileController.findProfileByUsername(username: loginCredential.username, token: KeychainWrapper.standard[.tokenSession]!) {
+                    KeychainWrapper.standard[.lastName] = fetchedProfile.lastName
+                    KeychainWrapper.standard[.firstName] = fetchedProfile.firstName
+                    KeychainWrapper.standard[.email] = fetchedProfile.email
+                    KeychainWrapper.standard[.username] = fetchedProfile.username
+                    KeychainWrapper.standard[.birthDate] = fetchedProfile.birthDate
+                }
+                isCredentialsCorrect = true
+            }
         } else {
             isCredentialsWrong = true
         }
@@ -94,7 +110,11 @@ struct LoadingView: View {
     func tryRegister(registerCredential: RegisterCredential) {
         let dateFormatter = DateFormatter()
         let profile: Profile = Profile(lastName: registerCredential.lastName, firstName: registerCredential.firstName, email: registerCredential.email, username: registerCredential.username, password: registerCredential.password, birthDate: dateFormatter.string(from: registerCredential.birthDate))
+        
         if let _unwrapped: String = authController.register(profile: profile) {
+            
+            // ici recuperer l'id et faire un get user par id pour set les key
+            
             print(_unwrapped)
         } else {
             isCredentialsWrong = true

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		8B54BFBA268B27A8007EA961 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54BFB9268B27A8007EA961 /* Category.swift */; };
 		8B54BFBF268B3A19007EA961 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54BFBE268B3A19007EA961 /* Role.swift */; };
 		8B5828FE2689178F00C9F749 /* Ingredient .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5828FD2689178F00C9F749 /* Ingredient .swift */; };
+		8B5E21EC269E4427005BAE25 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21EB269E4427005BAE25 /* ProfileController.swift */; };
 		8B62B268268BBEE00046C07C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B267268BBEE00046C07C /* Comment.swift */; };
 		8B62B26D268BBEEE0046C07C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B26C268BBEEE0046C07C /* Profile.swift */; };
 		8B62B272268BBEFF0046C07C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B271268BBEFF0046C07C /* Recipe.swift */; };
@@ -68,6 +69,7 @@
 		8B54BFB9268B27A8007EA961 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		8B54BFBE268B3A19007EA961 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		8B5828FD2689178F00C9F749 /* Ingredient .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient .swift"; sourceTree = "<group>"; };
+		8B5E21EB269E4427005BAE25 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		8B62B267268BBEE00046C07C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		8B62B26C268BBEEE0046C07C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8B62B271268BBEFF0046C07C /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 				ED581000E666C1AB118DCC43 /* Pods-cocotton-frontendTests.debug.xcconfig */,
 				083CF42704B399591FFEA7CA /* Pods-cocotton-frontendTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -239,6 +240,7 @@
 				8B62B2B02698BFC40046C07C /* RestManager.swift */,
 				8B62B2BD269A2C600046C07C /* FileTempController.swift */,
 				8B62B2ED269B27F20046C07C /* AuthController.swift */,
+				8B5E21EB269E4427005BAE25 /* ProfileController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -506,6 +508,7 @@
 				8B62B2F3269B4B870046C07C /* RegisterView.swift in Sources */,
 				8B62B2B12698BFC40046C07C /* RestManager.swift in Sources */,
 				8B62B277268BBF090046C07C /* Session.swift in Sources */,
+				8B5E21EC269E4427005BAE25 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
