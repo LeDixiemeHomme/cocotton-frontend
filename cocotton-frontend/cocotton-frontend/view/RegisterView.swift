@@ -16,6 +16,9 @@ struct RegisterView: View {
     @State private var email = ""
     @State private var birthDate = Date()
     
+    @State private var displayAlert = false
+    @State private var alert: Alert = Alert(title: Text("Empty alert"))
+    
     @State private var emptyMandatoryFields = false
     @State private var isGoodForLoad = false
     @State private var isWrongCredentials = false
@@ -23,10 +26,9 @@ struct RegisterView: View {
     private let authController: AuthController = AuthController()
     
     var body: some View {
-            VStack(spacing: 15) {
-                
+        Group { //group 1
+            VStack(spacing: 15) { //VStack 1
                 Spacer()
-                
                 Text("Register page")
                     .font(.system(size: 48, weight: .semibold))
                     .foregroundColor(.white)
@@ -35,7 +37,7 @@ struct RegisterView: View {
                     .background(Color.black.opacity(0.5))
                     .cornerRadius(8)
                 Spacer()
-                Group {
+                Group { //group 2
                     HStack {
                         Image(systemName: "person.2.fill").foregroundColor(.black)
                         TextField("Username", text: $username)
@@ -109,16 +111,13 @@ struct RegisterView: View {
                     .font(.system(size: 15))
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(8)
-                }
-                
-                Spacer()
+                } //end groupe 2
                                 
                 NavigationLink(
-                    destination: LoadingView(textAction: "Registering").onAppear {
-                        LoadingView(textAction: "Registering").tryRegister(registerCredential: RegisterCredential(username: self.username, password: self.password, email: self.email, firstName: self.firstName, lastName: self.lastName, birthDate: self.birthDate))
-                    }, isActive: $isGoodForLoad,
+                    destination: LoadingView(textAction: "Registering", registerCredential: RegisterCredential(username: self.username, password: self.password, email: self.email, firstName: self.firstName, lastName: self.lastName, birthDate: self.birthDate)), isActive: $isGoodForLoad,
                     label: {
                 })
+                
                 Button(action: {viewBehavior()}, label: {
                     Text("Register")
                         .foregroundColor(.white)
@@ -130,42 +129,29 @@ struct RegisterView: View {
                 
                 Spacer()
                 
-                
-            }
-            .alert(isPresented: $isWrongCredentials, content: {
-                Alert(
-                    title: Text("Wrong credentials"),
-                    message: Text("Your credentials are wrong. Try creating an account !")
-                )
-            })
-            .alert(isPresented: $emptyMandatoryFields) {
-                Alert(
-                    title: Text("Empty mandatory fields"),
-                    message: Text("Mandatory fields must be filled.")
-                )
-            }
+            }//end VStack 1
             .background(
-                Image("register_background")
+                Image("login_background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .blur(radius: 2)
             ).edgesIgnoringSafeArea(.all)
+        }//end group 1
+        .alert(isPresented: $displayAlert, content: {
+            self.alert
+        })
     }
     
     func viewBehavior() {
-        print("viewBehave")
         if username != "" && password != "" && firstName != "" && lastName != "" && email != "" {
             isGoodForLoad = true
-            print("isGoodForLoad = " + isGoodForLoad.description)
         } else {
-            emptyMandatoryFields = true
-            print("emptyMandatoryFields = " + emptyMandatoryFields.description)
+            alert =  Alert(
+                    title: Text("Empty mandatory fields"),
+                    message: Text("Mandatory fields must be filled.")
+                )
+            displayAlert = true
         }
-    }
-    
-    func displayWrongCredentials() {
-        isWrongCredentials = true
-        print("isWrongCredentials = " + isWrongCredentials.description)
     }
 }
 

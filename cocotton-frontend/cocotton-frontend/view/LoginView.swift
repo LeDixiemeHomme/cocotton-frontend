@@ -12,17 +12,16 @@ struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
     
-    @State private var emptyMandatoryFields = false
     @State private var isGoodForLoad = false
-    @State private var isWrongCredentials = false
+    
+    @State public var displayAlert = false
+    @State public var alert: Alert = Alert(title: Text("Empty alert"))
     
     private let authController: AuthController = AuthController()
 
     var body: some View {
-        
-        NavigationView {
-            
-            VStack(spacing: 15) {
+        Group { //group 1
+            VStack(spacing: 15) { //VStack 1
                 Spacer()
                 Text("Cocotton")
                     .font(.system(size: 64, weight: .semibold))
@@ -63,15 +62,14 @@ struct LoginView: View {
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(8)
                 }
-                                
+                
                 NavigationLink(
-                    destination: LoadingView(textAction: "Loging in").onAppear {
-                        LoadingView(textAction: "Loging in").tryLogin(loginCredential: LoginCredential(username: self.username, password: self.password))
-                    }, isActive: $isGoodForLoad,
+                    destination: LoadingView(textAction: "Loging in", loginCredential: LoginCredential(username: self.username, password: self.password)), isActive: $isGoodForLoad,
                     label: {
                 })
                 
-                Button(action: {viewBehavior()}, label: {
+                Button(
+                    action: {viewBehavior()}, label: {
                     Text("Login")
                         .foregroundColor(.white)
                         .font(.system(size: 24, weight: Font.Weight.medium))
@@ -96,41 +94,37 @@ struct LoginView: View {
                 .cornerRadius(8)
                 .padding(.horizontal, 10)
                 
-                
                 Spacer()
 
-            }
-            .alert(isPresented: $isWrongCredentials, content: {
-                Alert(
-                    title: Text("Wrong credentials"),
-                    message: Text("Your credentials are wrong. Try creating an account !")
-                )
-            })
+            }//end VStack 1
             .background(
                 Image("login_background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .blur(radius: 2)
             ).edgesIgnoringSafeArea(.all)
-        }
-        .alert(isPresented: $emptyMandatoryFields) {
-            Alert(
-                title: Text("Empty mandatory fields"),
-                message: Text("Mandatory fields must be filled.")
-            )
-        }
+        }//end group 1
+        .alert(isPresented: $displayAlert, content: {
+            self.alert
+        })
     }
     
     func viewBehavior() {
-        if username != "" && password != "" {
+        
+        //a delete debut
             isGoodForLoad = true
-        } else {
-            emptyMandatoryFields = true
-        }
-    }
-    
-    func displayWrongCredentials() {
-        isWrongCredentials = true
+        //a delete fin
+        
+        print("decommenter pour que ça remarche")
+//        if username != "" && password != "" {
+//            isGoodForLoad = true
+//        } else {
+//            alert =  Alert(
+//                    title: Text("Empty mandatory fields"),
+//                    message: Text("Mandatory fields must be filled.")
+//                )
+//            displayAlert = true
+//        }
     }
     
 }

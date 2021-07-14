@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftKeychainWrapper
 
 struct LoadingView: View {
     
@@ -13,17 +14,20 @@ struct LoadingView: View {
     @State var leftOffset: CGFloat = -100
     @State var rightOffset: CGFloat = 100
     
+    @State var timeToWait: Int?
     @State var textAction: String
+    @State var registerCredential: RegisterCredential?
+    @State var loginCredential: LoginCredential?
     
     @State public var isCredentialsWrong = false
     @State public var isCredentialsCorrect = false
     
     private let authController: AuthController = AuthController()
+    private let profileController: ProfileController = ProfileController()
     
     var body: some View {
-        
-        NavigationView {
-            VStack{
+        Group {// group 1
+            VStack{ //VStack 1
                 Spacer()
                 
                 TextField("Loading action", text: $textAction)
@@ -60,46 +64,95 @@ struct LoadingView: View {
                 
                 Spacer()
                 
-                NavigationLink(
-                    destination: LoginView().onAppear(perform: {
-                        LoginView().displayWrongCredentials()
-                    }), isActive: $isCredentialsWrong,
-                    label: {
-                })
+                if isCredentialsCorrect {
+                    InitialTabView()
+                } else if isCredentialsWrong {
+                    LoginView(displayAlert: true, alert: Alert(
+                        title: Text("Wrong credentials"),
+                        message: Text("Your credentials are wrong. Try to create an account !")
+                    )).navigationBarBackButtonHidden(true)
+                }
                 
-                NavigationLink(
-                    destination: MainView(), isActive: $isCredentialsCorrect,
-                    label: {
-                })
-                
-            }
+            }// end VStack 1
             .background(
-                Image("loading_background")
+                Image("register_background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .blur(radius: 5)
             ).edgesIgnoringSafeArea(.all)
+        }// end group 1
+        .onLoad {
+            if let loginCredential: LoginCredential = self.loginCredential {
+                tryLogin(loginCredential: loginCredential)
+            } else if let registerCredential: RegisterCredential = self.registerCredential {
+                tryRegister(registerCredential: registerCredential)
+            } else if let timeToWait: Int = self.timeToWait {
+                tryWaitForPresentation(time: timeToWait)
+            }
         }
     }
     
-    func tryLogin(loginCredential: LoginCredential) {
-        if let _unwrapped: String = authController.login(loginCredential: loginCredential) {
-            // placer le token dans le userdata ?? ou ailleurs
-            isCredentialsCorrect = true
+    func tryLogin(loginCredential: LoginCredential) -> Void {
+        print("///////////////////passe dans le tryLogin")
+        if let unwrappedToken: String = authController.login(loginCredential: loginCredential) {
+            print("///////////////////passe dans le tryLogin if")
+            print("unwrappedToken")
+            print(unwrappedToken)
+            KeychainWrapper.standard[.tokenSession] = unwrappedToken
+
+            if let _: String = KeychainWrapper.standard[.profileId], let _: String = KeychainWrapper.standard[.lastName],
+               let _: String = KeychainWrapper.standard[.firstName], let _: String = KeychainWrapper.standard[.email],
+               let _: String = KeychainWrapper.standard[.username], let _: String = KeychainWrapper.standard[.birthDate]
+            {
+                print("///////////////////passe dans le test du key wrapper if")
+                isCredentialsCorrect = true
+            } else {
+                print("///////////////////passe dans le test du key wrapper else")
+                self.textAction = "Updating local data"
+                if let fetchedProfile: Profile = profileController.findProfileByToken(token: KeychainWrapper.standard[.tokenSession]!)
+                {
+                    KeychainWrapper.standard[.profileId] = fetchedProfile.id
+                    KeychainWrapper.standard[.lastName] = fetchedProfile.lastName
+                    KeychainWrapper.standard[.firstName] = fetchedProfile.firstName
+                    KeychainWrapper.standard[.email] = fetchedProfile.email
+                    KeychainWrapper.standard[.username] = fetchedProfile.username
+                    KeychainWrapper.standard[.birthDate] = fetchedProfile.birthDate
+                }
+                isCredentialsCorrect = true
+            }
         } else {
+            print("///////////////////passe dans le tryLogin else")
             isCredentialsWrong = true
         }
     }
     
-    func tryRegister(registerCredential: RegisterCredential) {
+    func tryRegister(registerCredential: RegisterCredential) -> Void {
         let dateFormatter = DateFormatter()
         let profile: Profile = Profile(lastName: registerCredential.lastName, firstName: registerCredential.firstName, email: registerCredential.email, username: registerCredential.username, password: registerCredential.password, birthDate: dateFormatter.string(from: registerCredential.birthDate))
-        if let _unwrapped: String = authController.register(profile: profile) {
-            print(_unwrapped)
+        
+        if let unwrappedProfileId: String = authController.register(profile: profile) {
+            
+            KeychainWrapper.standard[.profileId] = unwrappedProfileId
+            KeychainWrapper.standard[.lastName] = profile.lastName
+            KeychainWrapper.standard[.firstName] = profile.firstName
+            KeychainWrapper.standard[.email] = profile.email
+            KeychainWrapper.standard[.username] = profile.username
+            KeychainWrapper.standard[.birthDate] = profile.birthDate
+            
+            isCredentialsCorrect = true
+            
         } else {
             isCredentialsWrong = true
         }
     }
+    
+    func tryWaitForPresentation(time: Int) -> Void {
+        sleep(UInt32(time))
+        LoginView(displayAlert: true, alert: Alert(
+            title: Text("End of the waiting.")
+        ))
+    }
+    
 }
 
 struct LoadingView_Previews: PreviewProvider {
