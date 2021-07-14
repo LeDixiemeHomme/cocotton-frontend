@@ -15,7 +15,8 @@ class AuthController {
     let authTarget = AUTH_TARGET
     
     func register(profile: Profile) -> String? {
-        var profile_id: String = ""
+        var profile_id: String?
+        let semaphore = DispatchSemaphore(value: 0)
         
         rest.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
         rest.httpBodyParameters.add(value: profile.firstName!, forKey: "firstName")
@@ -32,9 +33,12 @@ class AuthController {
             if response.httpStatusCode == 201 {
                 guard let location: String = response.headers.value(forKey: "Location") else { return }
                 profile_id = location
+                semaphore.signal()
+            } else {
+                semaphore.signal()
             }
         }
-        
+        _ = semaphore.wait(wallTimeout: .distantFuture)
         return profile_id
     }
     
@@ -43,16 +47,25 @@ class AuthController {
         let semaphore = DispatchSemaphore(value: 0)
         
         rest.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
-        rest.httpBodyParameters.add(value: loginCredential.username, forKey: "email")
-        rest.httpBodyParameters.add(value: loginCredential.password, forKey: "password")
+        print("changer cette valeur email -> username pour que ça marche avec cocotton")
+        print("valeur de co en brut ici")
+        rest.httpBodyParameters.add(value: "valleb2@gmail.com", forKey: "email")
+        rest.httpBodyParameters.add(value: "azerty2658", forKey: "password")
         
+//        rest.httpBodyParameters.add(value: loginCredential.username, forKey: "username")
+//        rest.httpBodyParameters.add(value: loginCredential.password, forKey: "password")
+
         guard let url = URL(string: API_BASE_URL + AUTH_TARGET + "login") else { return nil }
+        
         rest.makeRequest(toURL: url, withHttpMethod: .post, token: nil) { (results) in
             
             guard let response = results.response else { return }
+            print("faire attention a 200 ou 201")
             if response.httpStatusCode == 200 {
+                print("results")
+                print(results)
                 if let data = results.data {
-                    
+                    print("decommenter pour que ça marche avec cocotton")
 //                    guard let authorization: String = response.headers.value(forKey: "Authorization") else {
 //                        semaphore.signal()
 //                        return
@@ -66,6 +79,8 @@ class AuthController {
                     } else { return }
                     semaphore.signal()
                 }
+            } else {
+                semaphore.signal()
             }
         }
         _ = semaphore.wait(wallTimeout: .distantFuture)
