@@ -81,7 +81,7 @@ struct LoadingView: View {
                     .blur(radius: 5)
             ).edgesIgnoringSafeArea(.all)
         }// end group 1
-        .onLoad {
+        .onAppear {
             if let loginCredential: LoginCredential = self.loginCredential {
                 tryLogin(loginCredential: loginCredential)
             } else if let registerCredential: RegisterCredential = self.registerCredential {
@@ -127,6 +127,7 @@ struct LoadingView: View {
     }
     
     func tryRegister(registerCredential: RegisterCredential) -> Void {
+        print("///////////////////passe dans le tryRegister")
         let dateFormatter = DateFormatter()
         let profile: Profile = Profile(lastName: registerCredential.lastName, firstName: registerCredential.firstName, email: registerCredential.email, username: registerCredential.username, password: registerCredential.password, birthDate: dateFormatter.string(from: registerCredential.birthDate))
         

@@ -12,15 +12,23 @@ class TokenController {
     
     private let profileController: ProfileController = ProfileController()
     
-    func testToken() -> Bool {
+    func isTokenWrapped() -> Bool {
+        if let _: String = KeychainWrapper.standard[.tokenSession] {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isWorkingToken() -> Bool {
         if let tokenSession: String = KeychainWrapper.standard[.tokenSession] {
             if let _: Profile = profileController.findProfileByToken(token: tokenSession) {
-                return false
-            } else {
                 return true
+            } else {
+                return false
             }
         } else {
-            return true
+            return false
         }
     }
     
