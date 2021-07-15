@@ -12,19 +12,23 @@ struct InitialTabView: View {
     @State private var shouldLogin = false
     
     var body: some View {
-        TabView {
-            Text("view1").tabItem {
-                Label("Playlist", systemImage: "play.rectangle.fill")}
-            MainView().tabItem {
-                Text("MainView")
-                Image(systemName: "m.circle")}
-            Text("view2").tabItem {
-                Text("view2")
-                Image(systemName: "m.circle")}
-        }.onAppear{
-            print(shouldLogin.description)
-            shouldLogin = TokenController().testToken()
-            print(shouldLogin.description)
+        if shouldLogin {
+            LoginView().navigationBarBackButtonHidden(true)
+        } else {
+            TabView {
+                MainView().tabItem {
+                    Label("Recipes", systemImage: "list.dash")}
+                MainView().tabItem {
+                    Label("Add Recipe", systemImage: "note.text.badge.plus")}
+                MainView().tabItem {
+                    Label("Main Page", systemImage: "m.square.fill")}
+                MainView().tabItem {
+                    Label("Settings", systemImage: "gearshape.fill")}
+            }.onAppear{
+                print("gestion du passage par le login ici")
+//                shouldLogin = !TokenController().isWorkingToken()
+                shouldLogin = !TokenController().isTokenWrapped()
+            }
         }
     }
 }
@@ -34,3 +38,4 @@ struct InitialTabView_Previews: PreviewProvider {
         InitialTabView()
     }
 }
+	

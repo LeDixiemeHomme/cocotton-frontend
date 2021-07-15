@@ -20,93 +20,95 @@ struct LoginView: View {
     private let authController: AuthController = AuthController()
 
     var body: some View {
-        Group { //group 1
-            VStack(spacing: 15) { //VStack 1
-                Spacer()
-                Text("Cocotton")
-                    .font(.system(size: 64, weight: .semibold))
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.black.opacity(0.5))
-                    .cornerRadius(8)
-                Spacer()
-                Group {
-                    HStack {
-                        Image(systemName: "person.2.fill").foregroundColor(.black)
-                        TextField("Username", text: $username)
-                            .autocapitalization(.none)
-                        Text("*").foregroundColor(.red)
+        NavigationView {
+            Group { //group 1
+                VStack(spacing: 15) { //VStack 1
+                    Spacer()
+                    Text("Cocotton")
+                        .font(.system(size: 64, weight: .semibold))
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.black.opacity(0.5))
+                        .cornerRadius(8)
+                    Spacer()
+                    Group {
+                        HStack {
+                            Image(systemName: "person.2.fill").foregroundColor(.black)
+                            TextField("Username", text: $username)
+                                .autocapitalization(.none)
+                            Text("*").foregroundColor(.red)
+                        }
+                        .padding(.all, 20)
+                        .background(Color.white.opacity(0.8))
+                        .cornerRadius(8)
+                        .padding(.horizontal, 10)
+                        
+                        HStack {
+                            Image(systemName: "lock.fill").foregroundColor(.black)
+                            SecureField("Password", text: $password)
+                                .autocapitalization(.none)
+                            Text("*").foregroundColor(.red)
+                        }
+                        .padding(.all, 20)
+                        .background(Color.white.opacity(0.8))
+                        .cornerRadius(8)
+                        .padding(.horizontal, 10)
+                    
+                        HStack() {
+                            Text("*").foregroundColor(.red)
+                            Text(": Mandatory fields.")
+                        }
+                        .padding(.all, 8)
+                        .font(.system(size: 15))
+                        .background(Color.white.opacity(0.8))
+                        .cornerRadius(8)
                     }
-                    .padding(.all, 20)
+                    
+                    NavigationLink(
+                        destination: LoadingView(textAction: "Loging in", loginCredential: LoginCredential(username: self.username, password: self.password)), isActive: $isGoodForLoad,
+                        label: {
+                    })
+                    
+                    Button(
+                        action: {viewBehavior()}, label: {
+                        Text("Login")
+                            .foregroundColor(.white)
+                            .font(.system(size: 24, weight: Font.Weight.medium))
+                            .padding()
+                            .background(Color.black.opacity(0.5))
+                            .cornerRadius(8)
+                    })
+                    
+                    Spacer()
+                    
+                    VStack {
+                        Text("Not registered yet ?")
+                            .foregroundColor(.black)
+                        NavigationLink(
+                            destination: RegisterView(),
+                            label: {
+                                Text("Click to create an account")
+                            })
+                    }
+                    .padding(.all, 10)
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(8)
                     .padding(.horizontal, 10)
                     
-                    HStack {
-                        Image(systemName: "lock.fill").foregroundColor(.black)
-                        SecureField("Password", text: $password)
-                            .autocapitalization(.none)
-                        Text("*").foregroundColor(.red)
-                    }
-                    .padding(.all, 20)
-                    .background(Color.white.opacity(0.8))
-                    .cornerRadius(8)
-                    .padding(.horizontal, 10)
-                
-                    HStack() {
-                        Text("*").foregroundColor(.red)
-                        Text(": Mandatory fields.")
-                    }
-                    .padding(.all, 8)
-                    .font(.system(size: 15))
-                    .background(Color.white.opacity(0.8))
-                    .cornerRadius(8)
-                }
-                
-                NavigationLink(
-                    destination: LoadingView(textAction: "Loging in", loginCredential: LoginCredential(username: self.username, password: self.password)), isActive: $isGoodForLoad,
-                    label: {
-                })
-                
-                Button(
-                    action: {viewBehavior()}, label: {
-                    Text("Login")
-                        .foregroundColor(.white)
-                        .font(.system(size: 24, weight: Font.Weight.medium))
-                        .padding()
-                        .background(Color.black.opacity(0.5))
-                        .cornerRadius(8)
-                })
-                
-                Spacer()
-                
-                VStack {
-                    Text("Not registered yet ?")
-                        .foregroundColor(.black)
-                    NavigationLink(
-                        destination: RegisterView(),
-                        label: {
-                            Text("Click to create an account")
-                        })
-                }
-                .padding(.all, 10)
-                .background(Color.white.opacity(0.8))
-                .cornerRadius(8)
-                .padding(.horizontal, 10)
-                
-                Spacer()
+                    Spacer()
 
-            }//end VStack 1
-            .background(
-                Image("login_background")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .blur(radius: 2)
-            ).edgesIgnoringSafeArea(.all)
-        }//end group 1
-        .alert(isPresented: $displayAlert, content: {
-            self.alert
-        })
+                }//end VStack 1
+                .background(
+                    Image("login_background")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .blur(radius: 2)
+                ).edgesIgnoringSafeArea(.all)
+            }//end group 1
+            .alert(isPresented: $displayAlert, content: {
+                self.alert
+            })
+        }
     }
     
     func viewBehavior() {
@@ -115,7 +117,7 @@ struct LoginView: View {
             isGoodForLoad = true
         //a delete fin
         
-        print("decommenter pour que ça remarche")
+        print("decommenter pour que alert Empty mandatory fields remarche")
 //        if username != "" && password != "" {
 //            isGoodForLoad = true
 //        } else {

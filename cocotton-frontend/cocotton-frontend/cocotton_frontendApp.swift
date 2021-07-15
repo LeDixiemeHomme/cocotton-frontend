@@ -16,17 +16,16 @@ struct cocotton_frontendApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                if shouldLogin {
-                    NavigationView{
-                        LoginView()
-                    }
-                } else {
-                    InitialTabView()
-                }
-            }.onAppear{
-                shouldLogin = TokenController().testToken()
-            }
+                InitialTabView()
+            }.onAppear(perform: {
+                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/clearToken()
+            })
         }
+    }
+    
+    func clearToken() {
+        print("clear token")
+        KeychainWrapper.standard.remove(forKey: .tokenSession)
     }
 }
 
