@@ -62,8 +62,6 @@ class AuthController {
             guard let response = results.response else { return }
             print("faire attention a 200 ou 201")
             if response.httpStatusCode == 200 {
-                print("results")
-                print(results)
                 if let data = results.data {
                     print("decommenter pour que ça marche avec cocotton")
 //                    guard let authorization: String = response.headers.value(forKey: "Authorization") else {
