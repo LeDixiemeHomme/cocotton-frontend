@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27CCA77E64592EBFA8C7B186 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39CED49852839F2EA9802F8 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework */; };
+		8B0B9BC926A1F8DA003157A4 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B9BC826A1F8DA003157A4 /* testView.swift */; };
 		8B51BC192688DA96008796D7 /* cocotton_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51BC182688DA96008796D7 /* cocotton_frontendApp.swift */; };
 		8B51BC1D2688DA97008796D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51BC1C2688DA97008796D7 /* Assets.xcassets */; };
 		8B51BC202688DA97008796D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51BC1F2688DA97008796D7 /* Preview Assets.xcassets */; };
@@ -21,7 +22,6 @@
 		8B5E21F1269F184E005BAE25 /* TokenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21F0269F184D005BAE25 /* TokenController.swift */; };
 		8B5E21F6269F6863005BAE25 /* InitialTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21F5269F6863005BAE25 /* InitialTabView.swift */; };
 		8B5E21FB269F7283005BAE25 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21FA269F7283005BAE25 /* ViewDidLoadModifier.swift */; };
-		8B5E2200269F7B86005BAE25 /* PlayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21FF269F7B86005BAE25 /* PlayListView.swift */; };
 		8B62B268268BBEE00046C07C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B267268BBEE00046C07C /* Comment.swift */; };
 		8B62B26D268BBEEE0046C07C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B26C268BBEEE0046C07C /* Profile.swift */; };
 		8B62B272268BBEFF0046C07C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B271268BBEFF0046C07C /* Recipe.swift */; };
@@ -33,6 +33,10 @@
 		8B62B2EE269B27F20046C07C /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2ED269B27F20046C07C /* AuthController.swift */; };
 		8B62B2F3269B4B870046C07C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2F2269B4B870046C07C /* RegisterView.swift */; };
 		8B62B2F8269B4DEF0046C07C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2F7269B4DEF0046C07C /* MainView.swift */; };
+		8BC2AE3926A0D6D300D793DF /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2AE3826A0D6D300D793DF /* RecipeListView.swift */; };
+		8BC2AE3F26A0D9A900D793DF /* RecipeRowViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2AE3E26A0D9A900D793DF /* RecipeRowViewElement.swift */; };
+		8BC2AE4426A0D9BE00D793DF /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2AE4326A0D9BE00D793DF /* RecipeDetailView.swift */; };
+		8BC2AE4F26A0E10400D793DF /* CircleImageViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2AE4E26A0E10400D793DF /* CircleImageViewElement.swift */; };
 		BC9934B1015799D3DD873081 /* Pods_cocotton_frontend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F002B7EECC484F9F7B23032 /* Pods_cocotton_frontend.framework */; };
 		EF59DD7F597771D12E6CF06E /* Pods_cocotton_frontendTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915B80DB18DEB840C4429C1 /* Pods_cocotton_frontendTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +62,7 @@
 		083CF42704B399591FFEA7CA /* Pods-cocotton-frontendTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontendTests.release.xcconfig"; path = "Target Support Files/Pods-cocotton-frontendTests/Pods-cocotton-frontendTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F002B7EECC484F9F7B23032 /* Pods_cocotton_frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocotton_frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7773F292026DC1F0F8A249 /* Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig"; path = "Target Support Files/Pods-cocotton-frontend-cocotton-frontendUITests/Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B0B9BC826A1F8DA003157A4 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		8B51BC152688DA96008796D7 /* cocotton-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cocotton-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B51BC182688DA96008796D7 /* cocotton_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocotton_frontendApp.swift; sourceTree = "<group>"; };
 		8B51BC1C2688DA97008796D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,7 +82,6 @@
 		8B5E21F0269F184D005BAE25 /* TokenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenController.swift; sourceTree = "<group>"; };
 		8B5E21F5269F6863005BAE25 /* InitialTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialTabView.swift; sourceTree = "<group>"; };
 		8B5E21FA269F7283005BAE25 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
-		8B5E21FF269F7B86005BAE25 /* PlayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListView.swift; sourceTree = "<group>"; };
 		8B62B267268BBEE00046C07C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		8B62B26C268BBEEE0046C07C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8B62B271268BBEFF0046C07C /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -89,6 +93,10 @@
 		8B62B2ED269B27F20046C07C /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		8B62B2F2269B4B870046C07C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8B62B2F7269B4DEF0046C07C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8BC2AE3826A0D6D300D793DF /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		8BC2AE3E26A0D9A900D793DF /* RecipeRowViewElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRowViewElement.swift; sourceTree = "<group>"; };
+		8BC2AE4326A0D9BE00D793DF /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		8BC2AE4E26A0E10400D793DF /* CircleImageViewElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageViewElement.swift; sourceTree = "<group>"; };
 		965CE6BF5DCCC0ECC2C79F50 /* Pods-cocotton-frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontend.release.xcconfig"; path = "Target Support Files/Pods-cocotton-frontend/Pods-cocotton-frontend.release.xcconfig"; sourceTree = "<group>"; };
 		D915B80DB18DEB840C4429C1 /* Pods_cocotton_frontendTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocotton_frontendTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2B370222060F6E3BA9141F /* Pods-cocotton-frontend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontend.debug.xcconfig"; path = "Target Support Files/Pods-cocotton-frontend/Pods-cocotton-frontend.debug.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +248,11 @@
 				8B540D71269B78FD00B3DC2B /* LoadingView.swift */,
 				8B5E21F5269F6863005BAE25 /* InitialTabView.swift */,
 				8B5E21FA269F7283005BAE25 /* ViewDidLoadModifier.swift */,
-				8B5E21FF269F7B86005BAE25 /* PlayListView.swift */,
+				8BC2AE3826A0D6D300D793DF /* RecipeListView.swift */,
+				8BC2AE3E26A0D9A900D793DF /* RecipeRowViewElement.swift */,
+				8BC2AE4326A0D9BE00D793DF /* RecipeDetailView.swift */,
+				8BC2AE4E26A0E10400D793DF /* CircleImageViewElement.swift */,
+				8B0B9BC826A1F8DA003157A4 /* testView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -505,12 +517,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5828FE2689178F00C9F749 /* Ingredient .swift in Sources */,
+				8B0B9BC926A1F8DA003157A4 /* testView.swift in Sources */,
+				8BC2AE4F26A0E10400D793DF /* CircleImageViewElement.swift in Sources */,
 				8B5E21F1269F184E005BAE25 /* TokenController.swift in Sources */,
 				8B62B287268BC7150046C07C /* FileTemp.swift in Sources */,
 				8B62B268268BBEE00046C07C /* Comment.swift in Sources */,
 				8B540D72269B78FD00B3DC2B /* LoadingView.swift in Sources */,
 				8B62B26D268BBEEE0046C07C /* Profile.swift in Sources */,
-				8B5E2200269F7B86005BAE25 /* PlayListView.swift in Sources */,
 				8B51BC192688DA96008796D7 /* cocotton_frontendApp.swift in Sources */,
 				8B5E21F6269F6863005BAE25 /* InitialTabView.swift in Sources */,
 				8B62B2EE269B27F20046C07C /* AuthController.swift in Sources */,
@@ -519,7 +532,10 @@
 				8B54BFBA268B27A8007EA961 /* Category.swift in Sources */,
 				8B62B2F8269B4DEF0046C07C /* MainView.swift in Sources */,
 				8B54BFBF268B3A19007EA961 /* Role.swift in Sources */,
+				8BC2AE4426A0D9BE00D793DF /* RecipeDetailView.swift in Sources */,
+				8BC2AE3F26A0D9A900D793DF /* RecipeRowViewElement.swift in Sources */,
 				8B62B272268BBEFF0046C07C /* Recipe.swift in Sources */,
+				8BC2AE3926A0D6D300D793DF /* RecipeListView.swift in Sources */,
 				8B5E21FB269F7283005BAE25 /* ViewDidLoadModifier.swift in Sources */,
 				8B62B2F3269B4B870046C07C /* RegisterView.swift in Sources */,
 				8B62B2B12698BFC40046C07C /* RestManager.swift in Sources */,
