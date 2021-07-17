@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		27CCA77E64592EBFA8C7B186 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39CED49852839F2EA9802F8 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework */; };
-		8B0B9BC926A1F8DA003157A4 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B9BC826A1F8DA003157A4 /* testView.swift */; };
 		8B0B9BDA26A2E20F003157A4 /* RecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B9BD926A2E20F003157A4 /* RecipeController.swift */; };
 		8B0B9BF626A2EA72003157A4 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B0B9BF526A2EA72003157A4 /* recipes.json */; };
 		8B51BC192688DA96008796D7 /* cocotton_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51BC182688DA96008796D7 /* cocotton_frontendApp.swift */; };
@@ -23,7 +22,6 @@
 		8B5E21EC269E4427005BAE25 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21EB269E4427005BAE25 /* ProfileController.swift */; };
 		8B5E21F1269F184E005BAE25 /* TokenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21F0269F184D005BAE25 /* TokenController.swift */; };
 		8B5E21F6269F6863005BAE25 /* InitialTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21F5269F6863005BAE25 /* InitialTabView.swift */; };
-		8B5E21FB269F7283005BAE25 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21FA269F7283005BAE25 /* ViewDidLoadModifier.swift */; };
 		8B5F371526A31B8F0011D89A /* IngredientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F371426A31B8F0011D89A /* IngredientDetailView.swift */; };
 		8B5F371D26A31C040011D89A /* IngredientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F371C26A31C040011D89A /* IngredientController.swift */; };
 		8B5F372226A31C7E0011D89A /* ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F372126A31C7E0011D89A /* ingredients.json */; };
@@ -75,7 +73,6 @@
 		083CF42704B399591FFEA7CA /* Pods-cocotton-frontendTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontendTests.release.xcconfig"; path = "Target Support Files/Pods-cocotton-frontendTests/Pods-cocotton-frontendTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F002B7EECC484F9F7B23032 /* Pods_cocotton_frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocotton_frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7773F292026DC1F0F8A249 /* Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig"; path = "Target Support Files/Pods-cocotton-frontend-cocotton-frontendUITests/Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8B0B9BC826A1F8DA003157A4 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		8B0B9BD926A2E20F003157A4 /* RecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeController.swift; sourceTree = "<group>"; };
 		8B0B9BF526A2EA72003157A4 /* recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		8B51BC152688DA96008796D7 /* cocotton-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cocotton-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +93,6 @@
 		8B5E21EB269E4427005BAE25 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		8B5E21F0269F184D005BAE25 /* TokenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenController.swift; sourceTree = "<group>"; };
 		8B5E21F5269F6863005BAE25 /* InitialTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialTabView.swift; sourceTree = "<group>"; };
-		8B5E21FA269F7283005BAE25 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		8B5F371426A31B8F0011D89A /* IngredientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailView.swift; sourceTree = "<group>"; };
 		8B5F371C26A31C040011D89A /* IngredientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientController.swift; sourceTree = "<group>"; };
 		8B5F372126A31C7E0011D89A /* ingredients.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ingredients.json; sourceTree = "<group>"; };
@@ -316,9 +312,7 @@
 				8B62B2F7269B4DEF0046C07C /* MainView.swift */,
 				8B540D71269B78FD00B3DC2B /* LoadingView.swift */,
 				8B5E21F5269F6863005BAE25 /* InitialTabView.swift */,
-				8B5E21FA269F7283005BAE25 /* ViewDidLoadModifier.swift */,
 				8BC2AE4E26A0E10400D793DF /* CircleImageViewElement.swift */,
-				8B0B9BC826A1F8DA003157A4 /* testView.swift */,
 				8B5F375D26A33F730011D89A /* StatsView.swift */,
 			);
 			path = view;
@@ -592,7 +586,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5828FE2689178F00C9F749 /* Ingredient .swift in Sources */,
-				8B0B9BC926A1F8DA003157A4 /* testView.swift in Sources */,
 				8BC2AE4F26A0E10400D793DF /* CircleImageViewElement.swift in Sources */,
 				8B5F373D26A32CBB0011D89A /* CommentListView.swift in Sources */,
 				8B5E21F1269F184E005BAE25 /* TokenController.swift in Sources */,
@@ -619,7 +612,6 @@
 				8BC2AE3F26A0D9A900D793DF /* RecipeRowViewElement.swift in Sources */,
 				8B62B272268BBEFF0046C07C /* Recipe.swift in Sources */,
 				8BC2AE3926A0D6D300D793DF /* RecipeListView.swift in Sources */,
-				8B5E21FB269F7283005BAE25 /* ViewDidLoadModifier.swift in Sources */,
 				8B62B2F3269B4B870046C07C /* RegisterView.swift in Sources */,
 				8B62B2B12698BFC40046C07C /* RestManager.swift in Sources */,
 				8B62B277268BBF090046C07C /* Session.swift in Sources */,
