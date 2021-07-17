@@ -111,6 +111,7 @@ struct LoginView: View {
                 label: {})
             
         }//end VStack 1
+        .navigationBarHidden(true)
         .background(
             Image(self.backGround)
                 .resizable()

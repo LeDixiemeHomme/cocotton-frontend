@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftKeychainWrapper
 
 struct RegisterView: View {
     
@@ -16,19 +17,25 @@ struct RegisterView: View {
     @State private var email = ""
     @State private var birthDate = Date()
     
+    @State private var isLoading = false
+    @State public var isCredentialsCorrect = false
+    
     @State private var displayAlert = false
     @State private var alert: Alert = Alert(title: Text("Empty alert"))
-    
-    @State private var emptyMandatoryFields = false
-    @State private var isGoodForLoad = false
-    @State private var isWrongCredentials = false
+    private let backGround: String = "login_background"
     
     private let authController: AuthController = AuthController()
+    private let profileController: ProfileController = ProfileController()
     
     var body: some View {
-        Group { //group 1
-            VStack(spacing: 15) { //VStack 1
+        VStack(spacing: 15){ //VStack 1
+            if isLoading { //if 1
+                LoadingView(textAction: "Registering", backGround: self.backGround)
+            } // end of 1
+            else { // else 1
+                
                 Spacer()
+                
                 Text("Register page")
                     .font(.system(size: 48, weight: .semibold))
                     .foregroundColor(.white)
@@ -36,8 +43,10 @@ struct RegisterView: View {
                     .padding(.horizontal, 10)
                     .background(Color.black.opacity(0.5))
                     .cornerRadius(8)
+                
                 Spacer()
-                Group { //group 2
+                
+                Group { //group 1
                     HStack {
                         Image(systemName: "person.2.fill").foregroundColor(.black)
                         TextField("Username", text: $username)
@@ -111,12 +120,7 @@ struct RegisterView: View {
                     .font(.system(size: 15))
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(8)
-                } //end groupe 2
-                                
-                NavigationLink(
-                    destination: LoadingView(textAction: "Registering", registerCredential: RegisterCredential(username: self.username, password: self.password, email: self.email, firstName: self.firstName, lastName: self.lastName, birthDate: self.birthDate)), isActive: $isGoodForLoad,
-                    label: {
-                })
+                } //end group 1
                 
                 Button(action: {viewBehavior()}, label: {
                     Text("Register")
@@ -129,28 +133,81 @@ struct RegisterView: View {
                 
                 Spacer()
                 
-            }//end VStack 1
-            .background(
-                Image("login_background")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .blur(radius: 2)
-            ).edgesIgnoringSafeArea(.all)
-        }//end group 1
+            } // end else 1
+            
+            NavigationLink(
+                destination: InitialTabView(tabSelection: 3),
+                isActive: $isCredentialsCorrect,
+                label: {})
+            
+        }//end VStack 1
+        .background(
+            Image(self.backGround)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .blur(radius: 2)
+        ).edgesIgnoringSafeArea(.all)
         .alert(isPresented: $displayAlert, content: {
             self.alert
+        }).onAppear(perform: {
+            print("disappear RegisterView")
+        }).onDisappear(perform: {
+            print("disappear RegisterView")
         })
     }
     
     func viewBehavior() {
         if username != "" && password != "" && firstName != "" && lastName != "" && email != "" {
-            isGoodForLoad = true
+            tryRegister(registerCredential: RegisterCredential(username: self.username, password: self.password, email: self.email, firstName: self.firstName, lastName: self.lastName, birthDate: self.birthDate))
         } else {
             alert =  Alert(
                     title: Text("Empty mandatory fields"),
                     message: Text("Mandatory fields must be filled.")
                 )
             displayAlert = true
+        }
+    }
+    
+    func tryRegister(registerCredential: RegisterCredential) -> Void {
+        isLoading = true
+        
+        let dateFormatter = DateFormatter()
+        let profile: Profile = Profile(lastName: registerCredential.lastName, firstName: registerCredential.firstName, email: registerCredential.email, username: registerCredential.username, password: registerCredential.password, birthDate: dateFormatter.string(from: registerCredential.birthDate))
+        
+        if let unwrappedProfileId: String = authController.register(profile: profile) {
+            
+            KeychainWrapper.standard[.profileId] = unwrappedProfileId
+            KeychainWrapper.standard[.lastName] = profile.lastName
+            KeychainWrapper.standard[.firstName] = profile.firstName
+            KeychainWrapper.standard[.email] = profile.email
+            KeychainWrapper.standard[.username] = profile.username
+            KeychainWrapper.standard[.birthDate] = profile.birthDate
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                isLoading = false
+                isCredentialsCorrect = true
+            }
+            return
+        } else {
+            
+            print("ici set le faux token ")
+            KeychainWrapper.standard[.tokenSession] = "fake-token"
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                isLoading = false
+                isCredentialsCorrect = true
+            }
+            return
+                
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//                isLoading = false
+//                alert = Alert(
+//                    title: Text("Wrong credentials"),
+//                    message: Text("Your credentials are wrong. Try to create an account !")
+//                )
+//                displayAlert = true
+//                return
+//            }
         }
     }
 }
