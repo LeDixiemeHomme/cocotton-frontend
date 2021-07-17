@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct CircleImageViewElement: View {
+    var image: Image
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        image
+            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            .overlay(Circle().stroke(Color.white, lineWidth: 4))
+            .shadow(radius: 7)
     }
 }
 
 struct CircleImageViewElement_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImageViewElement()
+        CircleImageViewElement(image: Image("recipe_row_image"))
     }
 }
