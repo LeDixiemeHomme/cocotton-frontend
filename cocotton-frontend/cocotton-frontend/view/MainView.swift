@@ -11,21 +11,51 @@ struct MainView: View {
     
     @State private var shouldLogin = false
     
+    @State private var comments = [Comment]()
+    
+    private let commentController: CommentController = CommentController()
+    
+    private let backGround: String = "main_background"
+    
     var body: some View {
-        VStack {
-            Text("Cocotton")
-                .font(.system(size: 64, weight: .semibold))
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.black.opacity(0.5))
-                .cornerRadius(8)
-            Text("Cocotton")
-                .font(.system(size: 64, weight: .semibold))
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.black.opacity(0.5))
-                .cornerRadius(8)
+        ScrollView {
+            VStack(spacing: 15) { // VStack 1
+                Spacer()
+                HStack {
+                Text("Cocotton")
+                    .font(.system(size: 48, weight: .semibold))
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.black.opacity(0.5))
+                    .cornerRadius(8)
+                }
+                
+                Spacer()
+                
+                CommentListView()
+                
+                Spacer()
+                
+                Spacer()
+                
+                StatsView()
+                
+                Spacer()
+            }// end VStack 1
         }
+        .background(
+            Image(self.backGround)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .blur(radius: 2)
+        )
+        .onAppear(perform: {
+            print("appear MainView")
+        })
+        .onDisappear(perform: {
+            print("disappear MainView")
+        })
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

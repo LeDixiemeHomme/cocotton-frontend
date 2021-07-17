@@ -1,0 +1,38 @@
+[
+    {
+        "id": "9f4f91e3-727d-4243-aac9-53f5112e410e",
+        "lastName": "Jean",
+        "firstName": "Pont",
+        "username": "Bridge",
+        "email": "1swiftuser@email.fr",
+        "birthDate": "2019-10-10",
+        "adult": false
+    },
+    {
+        "id": "08ced245-0601-4d8f-9507-b9f5d894d813",
+        "lastName": "Robert",
+        "firstName": "Arbre",
+        "username": "Tree",
+        "email": "2swiftuser@email.fr",
+        "birthDate": "2019-10-10",
+        "adult": false
+    },
+    {
+        "id": "38e8db59-3e7f-4728-b4ed-1d373f363659",
+        "lastName": "Leo",
+        "firstName": "Placard",
+        "username": "LionKing",
+        "email": "3swiftuser@email.fr",
+        "birthDate": "2019-10-10",
+        "adult": false
+    },
+    {
+        "id": "55dc6d0c-1638-4bb7-8170-fe236948ac22",
+        "lastName": "Yve",
+        "firstName": "Rocher",
+        "username": "Stonage",
+        "email": "4swiftuser@email.fr",
+        "birthDate": "2019-10-10",
+        "adult": false
+    }
+]

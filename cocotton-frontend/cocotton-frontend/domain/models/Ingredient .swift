@@ -7,17 +7,8 @@
 
 import Foundation
 	
-struct Ingredient: Codable  {
+struct Ingredient: Codable, Identifiable {
     var id: String?
     var name: String?
-    
-    init(id: String, name: String) {
-        self.id = id
-        self.name = name
-    }
-    
-    func getIngredientById(id: String){
-        
-    }
-    
+    var category: String?
 }

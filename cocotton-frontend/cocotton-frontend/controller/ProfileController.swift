@@ -40,4 +40,21 @@ class ProfileController {
         return profile
     }
     
+    func loadProfilesFromJson() -> [Profile] {
+        return load("profiles")
+    }
+    
+    func findProfileByIdFromSample(id: String) -> Profile? {
+        let profiles = loadProfilesFromJson()
+        for item in profiles {
+            if item.id == id {
+                return item
+            }
+        }
+        return nil
+    }
+    
+    func getProfilesCount() -> Int {
+        return loadProfilesFromJson().count
+    }
 }
