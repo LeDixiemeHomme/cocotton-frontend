@@ -1,0 +1,194 @@
+[
+    {
+        "id": "c3018d3e-d9ee-4b3c-ae9c-fdf2e9bba234",
+        "name": "tomato",
+        "category": "VEGETABLE"
+    },
+    {
+        "id": "b6464ab6-a84f-4faa-a18b-88224624838c",
+        "name": "beans",
+        "category": "VEGETABLE"
+    },
+    {
+        "id": "b7ee2194-a407-4538-bee4-ead442f4b817",
+        "name": "chicken",
+        "category": "MEAT"
+    },
+    {
+        "id": "f7327edc-e94a-4ee7-a349-f5b8f6b5c2d0",
+        "name": "beef",
+        "category": "MEAT"
+    },
+    {
+        "id": "0059868d-e3d4-4d4a-81c3-0e6326b0ebda",
+        "name": "porc",
+        "category": "MEAT"
+    },
+    {
+        "id": "2f2738b3-0761-47ac-ac9d-45a395a3c356",
+        "name": "bacon",
+        "category": "MEAT"
+    },
+    {
+        "id": "97d3d311-cc6d-4ca5-8294-976a0410b2a2",
+        "name": "garlic",
+        "category": "SPICE"
+    },
+    {
+        "id": "b7d8b8ac-e959-432e-bc8f-98e1327a138b",
+        "name": "onion",
+        "category": "SPICE"
+    },
+    {
+        "id": "2bfed875-853b-4167-88cf-6c8cdb10a8e4",
+        "name": "spinach",
+        "category": "VEGETABLE"
+    },
+    {
+        "id": "3285cc8d-0fbc-449d-8976-39a727e8a296",
+        "name": "apple",
+        "category": "FRUIT"
+    },
+    {
+        "id": "817cacba-a849-4e16-ac00-9ac7cb50209f",
+        "name": "pear",
+        "category": "FRUIT"
+    },
+    {
+        "id": "32992f55-ec58-4d24-9dfe-ca27219dcf93",
+        "name": "avocado",
+        "category": "FRUIT"
+    },
+    {
+        "id": "95aa3f1c-2ad7-4c87-aaea-2ec6b01517ad",
+        "name": "banana",
+        "category": "FRUIT"
+    },
+    {
+        "id": "fff1c833-cdf9-41f0-8c6a-6ec45b8fd255",
+        "name": "Extra-virgin olive oil",
+        "category": "OIL"
+    },
+    {
+        "id": "ff998f79-546d-49e4-86d8-2410ae261313",
+        "name": "Light olive oil",
+        "category": "OIL"
+    },
+    {
+        "id": "6c61df3f-a2d8-4047-829e-11c75a7091cb",
+        "name": "Coconut oil",
+        "category": "OIL"
+    },
+    {
+        "id": "4327c85f-a763-4d7f-92ca-954e3f7afddd",
+        "name": "Avocado oil",
+        "category": "OIL"
+    },
+    {
+        "id": "d0365da7-e7b5-409a-a047-1d137774824d",
+        "name": "durian",
+        "category": "FRUIT"
+    },
+    {
+        "id": "3ea6367a-12a9-4d5a-b456-105956e76d05",
+        "name": "golden berries",
+        "category": "FRUIT"
+    },
+    {
+        "id": "46ebf4ff-149f-48b7-9fd4-2cecf1b81c9d",
+        "name": "redberries",
+        "category": "FRUIT"
+    },
+    {
+        "id": "24106172-445a-4090-a035-e942dd2abd5b",
+        "name": "jackfruit",
+        "category": "FRUIT"
+    },
+    {
+        "id": "4f9207cf-fafc-435b-aec4-9bda5c537573",
+        "name": "olives",
+        "category": "FRUIT"
+    },
+    {
+        "id": "5c5bd4a6-7adf-455a-ba12-868ade2c8eb5",
+        "name": "lime",
+        "category": "FRUIT"
+    },
+    {
+        "id": "e8601620-869c-47a1-966b-8c8ba65d5770",
+        "name": "pumpkin",
+        "category": "VEGETABLE"
+    },
+    {
+        "id": "9ccb9083-4e46-46a1-8e1b-32a27b6afdc3",
+        "name": "pea",
+        "category": "VEGETABLE"
+    },
+    {
+        "id": "7b9e133a-1f22-4a52-8769-2d9489c1d4b3",
+        "name": "corn",
+        "category": "VEGETABLE"
+    },
+    {
+        "id": "0ac5a4b0-6fa0-4034-95d3-2ae33659ef2a",
+        "name": "lettuce",
+        "category": "VEGETABLE"
+    },
+    {
+        "id": "fd39a307-0240-463d-b7b5-c1b7f1a589ac",
+        "name": "radish",
+        "category": "VEGETABLE"
+    },
+    {
+        "id": "598c4ff9-7601-4ea6-8e44-c220dceddbc7",
+        "name": "egg",
+        "category": "MEAT"
+    },
+    {
+        "id": "910409ff-49cf-40ce-bf1f-536c50fee344",
+        "name": "milk",
+        "category": "OTHER"
+    },
+    {
+        "id": "4389ab51-bd69-4f6c-8f87-a9774d84174f",
+        "name": "flour",
+        "category": "OTHER"
+    },
+    {
+        "id": "85aa74dd-a795-41e1-8d9a-1b140d1b4fec",
+        "name": "chocolat",
+        "category": "OTHER"
+    },
+    {
+        "id": "9d4d4ea9-3416-4927-a7f1-a6bb10262d50",
+        "name": "vanilla",
+        "category": "OTHER"
+    },
+    {
+        "id": "25a79156-b80b-41b2-bf9a-be339e2d1a4d",
+        "name": "sugar",
+        "category": "OTHER"
+    },
+    {
+        "id": "ec8c45a4-cc66-4d37-ada6-8367bfc00246",
+        "name": "honey",
+        "category": "OTHER"
+    },
+    {
+        "id": "76c8e86c-7ee1-441d-a7ff-03f754d94a80",
+        "name": "pasta",
+        "category": "OTHER"
+    },
+    {
+        "id": "593812de-01c9-4c0d-8ba7-8d0ea3386842",
+        "name": "cream",
+        "category": "OTHER"
+    }
+]
+
+
+
+
+
+
+
