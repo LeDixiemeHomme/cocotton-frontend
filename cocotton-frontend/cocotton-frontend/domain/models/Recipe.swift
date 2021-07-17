@@ -7,10 +7,15 @@
 
 import Foundation
 
-struct Recipe: Codable  {
+struct Recipe: Hashable, Codable, Identifiable {
     var id: String?
-    var name: String?
-    var ingredients: [Ingredient]?
-    var profileId: String?
+    var title: String?
+    var people: Int?
+    var ingredients: [String]?
+    var steps: [String]?
+    var userId: String?
+}
+
+struct Steps : Hashable, Codable {
     var steps: [String]?
 }

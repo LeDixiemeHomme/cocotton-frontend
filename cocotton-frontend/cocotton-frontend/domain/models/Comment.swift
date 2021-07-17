@@ -7,9 +7,12 @@
 
 import Foundation
 
-struct Comment: Codable  {
+struct Comment: Codable, Identifiable {
     var id: String?
-    var title: String?
     var content: String?
-    var profileId: String?
+    var userId: String?
+    
+    mutating func setUserId(id: String) {
+        self.userId = id
+    }
 }
