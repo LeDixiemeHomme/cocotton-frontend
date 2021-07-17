@@ -10,7 +10,9 @@ import SwiftUI
 struct InitialTabView: View {
     
     @State private var shouldLogin = false
-    @State var tabSelection: Int = 3
+    @State var tabSelection: Int
+    
+    private let backGround: String = "main_background"
     
     var body: some View {
             VStack { // VStack 1
@@ -24,18 +26,30 @@ struct InitialTabView: View {
                         RecipeListView().tabItem {
                             Label("Recipes", systemImage: "list.dash")}.tag(1)
                         MainView().tabItem {
-                            Label("Add Recipe", systemImage: "note.text.badge.plus")}.tag(2)
-                        MainView().tabItem {
                             Label("Main Page", systemImage: "m.square")}.tag(3)
                         MainView().tabItem {
-                            Label("Settings", systemImage: "gearshape.fill")}.tag(4)
+                            Label("Add Recipe", systemImage: "note.text.badge.plus")}.tag(2)
+//                        MainView().tabItem {
+//                            Label("Settings", systemImage: "gearshape.fill")}.tag(4)
+                    }
+                    .onAppear() {
+                        UITabBar.appearance().backgroundColor = .blue
                     }
                 }
             } // end VStack 1
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Title").font(.headline)
+                    switch tabSelection{
+                    case 1:
+                        Text("Recipe list").font(.headline)
+                    case 2:
+                        Text("Add recipe").font(.headline)
+                    case 3:
+                        Text("Main page").font(.headline)
+                    default:
+                        Text("Err").font(.headline)
+                    }
                 }
             }
             .onAppear{
@@ -50,9 +64,20 @@ struct InitialTabView: View {
     }
 }
 
+extension UITabBarController {
+    override open func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let standardAppearance = UITabBarAppearance()
+
+//        standardAppearance.backgroundImage = UIImage(named: "main_background")
+
+        tabBar.standardAppearance = standardAppearance
+    }
+}
+
 struct InitialTabView_Previews: PreviewProvider {
     static var previews: some View {
-        InitialTabView()
+        InitialTabView(tabSelection: 3)
     }
 }
 	
