@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		27CCA77E64592EBFA8C7B186 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39CED49852839F2EA9802F8 /* Pods_cocotton_frontend_cocotton_frontendUITests.framework */; };
 		8B0B9BC926A1F8DA003157A4 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B9BC826A1F8DA003157A4 /* testView.swift */; };
+		8B0B9BDA26A2E20F003157A4 /* RecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B9BD926A2E20F003157A4 /* RecipeController.swift */; };
+		8B0B9BF626A2EA72003157A4 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B0B9BF526A2EA72003157A4 /* recipes.json */; };
 		8B51BC192688DA96008796D7 /* cocotton_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51BC182688DA96008796D7 /* cocotton_frontendApp.swift */; };
 		8B51BC1D2688DA97008796D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51BC1C2688DA97008796D7 /* Assets.xcassets */; };
 		8B51BC202688DA97008796D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B51BC1F2688DA97008796D7 /* Preview Assets.xcassets */; };
@@ -22,6 +24,17 @@
 		8B5E21F1269F184E005BAE25 /* TokenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21F0269F184D005BAE25 /* TokenController.swift */; };
 		8B5E21F6269F6863005BAE25 /* InitialTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21F5269F6863005BAE25 /* InitialTabView.swift */; };
 		8B5E21FB269F7283005BAE25 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21FA269F7283005BAE25 /* ViewDidLoadModifier.swift */; };
+		8B5F371526A31B8F0011D89A /* IngredientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F371426A31B8F0011D89A /* IngredientDetailView.swift */; };
+		8B5F371D26A31C040011D89A /* IngredientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F371C26A31C040011D89A /* IngredientController.swift */; };
+		8B5F372226A31C7E0011D89A /* ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F372126A31C7E0011D89A /* ingredients.json */; };
+		8B5F372726A31D060011D89A /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F372626A31D060011D89A /* JsonLoader.swift */; };
+		8B5F372C26A325C60011D89A /* IngredientRowViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F372B26A325C60011D89A /* IngredientRowViewElement.swift */; };
+		8B5F373D26A32CBB0011D89A /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F373C26A32CBB0011D89A /* CommentListView.swift */; };
+		8B5F374226A32CD90011D89A /* profiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F374126A32CD90011D89A /* profiles.json */; };
+		8B5F374F26A32CFE0011D89A /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F374E26A32CFE0011D89A /* comments.json */; };
+		8B5F375426A32DDC0011D89A /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F375326A32DDC0011D89A /* CommentController.swift */; };
+		8B5F375926A32FE30011D89A /* CommentRowViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F375826A32FE30011D89A /* CommentRowViewElement.swift */; };
+		8B5F375E26A33F730011D89A /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F375D26A33F730011D89A /* StatsView.swift */; };
 		8B62B268268BBEE00046C07C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B267268BBEE00046C07C /* Comment.swift */; };
 		8B62B26D268BBEEE0046C07C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B26C268BBEEE0046C07C /* Profile.swift */; };
 		8B62B272268BBEFF0046C07C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B271268BBEFF0046C07C /* Recipe.swift */; };
@@ -63,6 +76,8 @@
 		0F002B7EECC484F9F7B23032 /* Pods_cocotton_frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocotton_frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7773F292026DC1F0F8A249 /* Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig"; path = "Target Support Files/Pods-cocotton-frontend-cocotton-frontendUITests/Pods-cocotton-frontend-cocotton-frontendUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0B9BC826A1F8DA003157A4 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
+		8B0B9BD926A2E20F003157A4 /* RecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeController.swift; sourceTree = "<group>"; };
+		8B0B9BF526A2EA72003157A4 /* recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		8B51BC152688DA96008796D7 /* cocotton-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cocotton-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B51BC182688DA96008796D7 /* cocotton_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocotton_frontendApp.swift; sourceTree = "<group>"; };
 		8B51BC1C2688DA97008796D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +97,17 @@
 		8B5E21F0269F184D005BAE25 /* TokenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenController.swift; sourceTree = "<group>"; };
 		8B5E21F5269F6863005BAE25 /* InitialTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialTabView.swift; sourceTree = "<group>"; };
 		8B5E21FA269F7283005BAE25 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
+		8B5F371426A31B8F0011D89A /* IngredientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailView.swift; sourceTree = "<group>"; };
+		8B5F371C26A31C040011D89A /* IngredientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientController.swift; sourceTree = "<group>"; };
+		8B5F372126A31C7E0011D89A /* ingredients.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ingredients.json; sourceTree = "<group>"; };
+		8B5F372626A31D060011D89A /* JsonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
+		8B5F372B26A325C60011D89A /* IngredientRowViewElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientRowViewElement.swift; sourceTree = "<group>"; };
+		8B5F373C26A32CBB0011D89A /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
+		8B5F374126A32CD90011D89A /* profiles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profiles.json; sourceTree = "<group>"; };
+		8B5F374E26A32CFE0011D89A /* comments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = comments.json; sourceTree = "<group>"; };
+		8B5F375326A32DDC0011D89A /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
+		8B5F375826A32FE30011D89A /* CommentRowViewElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRowViewElement.swift; sourceTree = "<group>"; };
+		8B5F375D26A33F730011D89A /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		8B62B267268BBEE00046C07C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		8B62B26C268BBEEE0046C07C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8B62B271268BBEFF0046C07C /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -146,6 +172,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8B0B9BDE26A2E3D6003157A4 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B0B9BF526A2EA72003157A4 /* recipes.json */,
+				8B5F372126A31C7E0011D89A /* ingredients.json */,
+				8B5F374126A32CD90011D89A /* profiles.json */,
+				8B5F374E26A32CFE0011D89A /* comments.json */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		8B51BC0C2688DA96008796D7 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +208,7 @@
 		8B51BC172688DA96008796D7 /* cocotton-frontend */ = {
 			isa = PBXGroup;
 			children = (
+				8B0B9BDE26A2E3D6003157A4 /* resources */,
 				8B62B27D268BC4830046C07C /* controller */,
 				8B62B27C268BC4580046C07C /* view */,
 				8B62B27B268BC43D0046C07C /* domain */,
@@ -208,6 +246,34 @@
 			path = "cocotton-frontendUITests";
 			sourceTree = "<group>";
 		};
+		8B5F371226A31B410011D89A /* recipe */ = {
+			isa = PBXGroup;
+			children = (
+				8BC2AE3826A0D6D300D793DF /* RecipeListView.swift */,
+				8BC2AE3E26A0D9A900D793DF /* RecipeRowViewElement.swift */,
+				8BC2AE4326A0D9BE00D793DF /* RecipeDetailView.swift */,
+			);
+			path = recipe;
+			sourceTree = "<group>";
+		};
+		8B5F371326A31B540011D89A /* ingredient */ = {
+			isa = PBXGroup;
+			children = (
+				8B5F371426A31B8F0011D89A /* IngredientDetailView.swift */,
+				8B5F372B26A325C60011D89A /* IngredientRowViewElement.swift */,
+			);
+			path = ingredient;
+			sourceTree = "<group>";
+		};
+		8B5F373026A32C560011D89A /* comment */ = {
+			isa = PBXGroup;
+			children = (
+				8B5F373C26A32CBB0011D89A /* CommentListView.swift */,
+				8B5F375826A32FE30011D89A /* CommentRowViewElement.swift */,
+			);
+			path = comment;
+			sourceTree = "<group>";
+		};
 		8B62B262268BBE420046C07C /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,17 +308,18 @@
 		8B62B27C268BC4580046C07C /* view */ = {
 			isa = PBXGroup;
 			children = (
+				8B5F373026A32C560011D89A /* comment */,
+				8B5F371326A31B540011D89A /* ingredient */,
+				8B5F371226A31B410011D89A /* recipe */,
 				8B62B2E5269AF2560046C07C /* LoginView.swift */,
 				8B62B2F2269B4B870046C07C /* RegisterView.swift */,
 				8B62B2F7269B4DEF0046C07C /* MainView.swift */,
 				8B540D71269B78FD00B3DC2B /* LoadingView.swift */,
 				8B5E21F5269F6863005BAE25 /* InitialTabView.swift */,
 				8B5E21FA269F7283005BAE25 /* ViewDidLoadModifier.swift */,
-				8BC2AE3826A0D6D300D793DF /* RecipeListView.swift */,
-				8BC2AE3E26A0D9A900D793DF /* RecipeRowViewElement.swift */,
-				8BC2AE4326A0D9BE00D793DF /* RecipeDetailView.swift */,
 				8BC2AE4E26A0E10400D793DF /* CircleImageViewElement.swift */,
 				8B0B9BC826A1F8DA003157A4 /* testView.swift */,
+				8B5F375D26A33F730011D89A /* StatsView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -265,6 +332,10 @@
 				8B62B2ED269B27F20046C07C /* AuthController.swift */,
 				8B5E21EB269E4427005BAE25 /* ProfileController.swift */,
 				8B5E21F0269F184D005BAE25 /* TokenController.swift */,
+				8B0B9BD926A2E20F003157A4 /* RecipeController.swift */,
+				8B5F371C26A31C040011D89A /* IngredientController.swift */,
+				8B5F372626A31D060011D89A /* JsonLoader.swift */,
+				8B5F375326A32DDC0011D89A /* CommentController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -387,8 +458,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B5F374226A32CD90011D89A /* profiles.json in Resources */,
+				8B5F372226A31C7E0011D89A /* ingredients.json in Resources */,
 				8B51BC202688DA97008796D7 /* Preview Assets.xcassets in Resources */,
+				8B0B9BF626A2EA72003157A4 /* recipes.json in Resources */,
 				8B51BC1D2688DA97008796D7 /* Assets.xcassets in Resources */,
+				8B5F374F26A32CFE0011D89A /* comments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,13 +594,21 @@
 				8B5828FE2689178F00C9F749 /* Ingredient .swift in Sources */,
 				8B0B9BC926A1F8DA003157A4 /* testView.swift in Sources */,
 				8BC2AE4F26A0E10400D793DF /* CircleImageViewElement.swift in Sources */,
+				8B5F373D26A32CBB0011D89A /* CommentListView.swift in Sources */,
 				8B5E21F1269F184E005BAE25 /* TokenController.swift in Sources */,
 				8B62B287268BC7150046C07C /* FileTemp.swift in Sources */,
 				8B62B268268BBEE00046C07C /* Comment.swift in Sources */,
 				8B540D72269B78FD00B3DC2B /* LoadingView.swift in Sources */,
+				8B5F375926A32FE30011D89A /* CommentRowViewElement.swift in Sources */,
+				8B0B9BDA26A2E20F003157A4 /* RecipeController.swift in Sources */,
+				8B5F375426A32DDC0011D89A /* CommentController.swift in Sources */,
 				8B62B26D268BBEEE0046C07C /* Profile.swift in Sources */,
+				8B5F375E26A33F730011D89A /* StatsView.swift in Sources */,
+				8B5F372C26A325C60011D89A /* IngredientRowViewElement.swift in Sources */,
 				8B51BC192688DA96008796D7 /* cocotton_frontendApp.swift in Sources */,
+				8B5F371D26A31C040011D89A /* IngredientController.swift in Sources */,
 				8B5E21F6269F6863005BAE25 /* InitialTabView.swift in Sources */,
+				8B5F371526A31B8F0011D89A /* IngredientDetailView.swift in Sources */,
 				8B62B2EE269B27F20046C07C /* AuthController.swift in Sources */,
 				8B62B2BE269A2C600046C07C /* FileTempController.swift in Sources */,
 				8B62B2E6269AF2560046C07C /* LoginView.swift in Sources */,
@@ -541,6 +624,7 @@
 				8B62B2B12698BFC40046C07C /* RestManager.swift in Sources */,
 				8B62B277268BBF090046C07C /* Session.swift in Sources */,
 				8B5E21EC269E4427005BAE25 /* ProfileController.swift in Sources */,
+				8B5F372726A31D060011D89A /* JsonLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
