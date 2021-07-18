@@ -49,11 +49,13 @@ class AuthController {
         rest.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
         print("changer cette valeur email -> username pour que ça marche avec cocotton")
         print("valeur de co en brut ici")
-        rest.httpBodyParameters.add(value: "valleb2@gmail.com", forKey: "email")
-        rest.httpBodyParameters.add(value: "azerty2658", forKey: "password")
+//        rest.httpBodyParameters.add(value: "valleb2@gmail.com", forKey: "email")
+//        rest.httpBodyParameters.add(value: "azerty2658", forKey: "password")
         
-//        rest.httpBodyParameters.add(value: loginCredential.username, forKey: "username")
-//        rest.httpBodyParameters.add(value: loginCredential.password, forKey: "password")
+        rest.httpBodyParameters.add(value: loginCredential.username, forKey: "username")
+        rest.httpBodyParameters.add(value: loginCredential.password, forKey: "password")
+        
+        print(loginCredential)
 
         guard let url = URL(string: API_BASE_URL + AUTH_TARGET + "login") else { return nil }
         
@@ -61,21 +63,21 @@ class AuthController {
             
             guard let response = results.response else { return }
             print("faire attention a 200 ou 201")
-            if response.httpStatusCode == 200 {
+            if response.httpStatusCode == 201 {
                 if let data = results.data {
                     print("decommenter pour que ça marche avec cocotton")
-//                    guard let authorization: String = response.headers.value(forKey: "Authorization") else {
-//                        semaphore.signal()
-//                        return
-//                    }
-//                    responseToken = authorization
-//                    semaphore.signal()
-                    
-                    let decoder = JSONDecoder()
-                    if let uptoken: UPToken = try? decoder.decode(UPToken.self, from: data){
-                        responseToken = uptoken.token
-                    } else { return }
+                    guard let authorization: String = response.headers.value(forKey: "Authorization") else {
+                        semaphore.signal()
+                        return
+                    }
+                    responseToken = authorization
                     semaphore.signal()
+                    
+//                    let decoder = JSONDecoder()
+//                    if let uptoken: UPToken = try? decoder.decode(UPToken.self, from: data){
+//                        responseToken = uptoken.token
+//                    } else { return }
+//                    semaphore.signal()
                 }
             } else {
                 semaphore.signal()

@@ -27,7 +27,7 @@ struct cocotton_frontendApp: App {
     }
     
     func clearToken() {
-        KeychainWrapper.standard.remove(forKey: .tokenSession)
+//        KeychainWrapper.standard.remove(forKey: .tokenSession)
     }
 }
 

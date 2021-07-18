@@ -8,7 +8,7 @@
 import Foundation
 
 let TOKEN: String = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWxsZWIyQGdtYWlsLmNvbSIsInJvbGVzIjpbeyJpZCI6IjYwOTgwMTA0NDRlYjY4MWU4MDQxODE5MiIsInJvbGUiOiJVU0VSIn1dLCJpYXQiOjE2MjU5OTU0MDEsImV4cCI6MTYyNTk5OTAwMX0.BmvMCYp8ERmtK9EB7DZDMY3gK-9ICVYbJOR0e3ohAUl9J61fVIwvom1mogu226rkOjgp1vz7hJxWe2ZLELB3CQ"
-let API_BASE_URL: String = "http://localhost:3010/api/v1/"
+let API_BASE_URL: String = "http://cocotton-env.eba-cxq5ftbc.us-east-2.elasticbeanstalk.com/"
 
 class RestManager {
     
