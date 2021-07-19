@@ -45,7 +45,7 @@ struct RecipeDetailView: View {
                         IngredientRowViewElement(ingredient: ingredient)
                     }
                 }
-                .frame(height: 200)
+                .frame(height: 300)
                 .onAppear{
                     self.ingredients = ingredientController.findAllIngredientsOfARecipe(ingredientsId: recipe.ingredients)
                 }
@@ -55,9 +55,12 @@ struct RecipeDetailView: View {
                 Text("Steps for \(recipe.title)")
                     .font(.title2)
                 List(recipe.steps, id: \.self) { step in
-                    Text(step)
+                    HStack {
+                        Text("Step n°\(recipe.steps.firstIndex(of: step)!+1). ").foregroundColor(Color.gray)
+                        Text("\(step)")
+                    }
                 }
-                .frame(height: 200	)
+                .frame(height: 300)
             }// end VStack 1
             .padding()
             
