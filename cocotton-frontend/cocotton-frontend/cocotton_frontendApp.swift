@@ -16,18 +16,10 @@ struct cocotton_frontendApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView { // NavigationView 1
-                InitialTabView(tabSelection: 3)
+                InitialTabView(tabSelection: 2)
             } // end NavigationView 1
-            .onAppear(perform: {
-                print("appear cocotton_frontendApp")
-                clearToken()
-            })
             .navigationViewStyle(StackNavigationViewStyle())
         }
-    }
-    
-    func clearToken() {
-//        KeychainWrapper.standard.remove(forKey: .tokenSession)
     }
 }
 
@@ -43,6 +35,9 @@ extension KeychainWrapper.Key {
 
 struct cocotton_frontendApp_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        NavigationView { // NavigationView 1
+            InitialTabView(tabSelection: 2)
+        } // end NavigationView 1
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
