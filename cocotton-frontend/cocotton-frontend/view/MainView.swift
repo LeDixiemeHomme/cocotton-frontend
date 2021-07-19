@@ -36,8 +36,6 @@ struct MainView: View {
                 
                 Spacer()
                 
-                Spacer()
-                
                 StatsView()
                 
                 Spacer()
@@ -49,12 +47,6 @@ struct MainView: View {
                 .aspectRatio(contentMode: .fill)
                 .blur(radius: 2)
         )
-        .onAppear(perform: {
-            print("appear MainView")
-        })
-        .onDisappear(perform: {
-            print("disappear MainView")
-        })
         .navigationBarTitleDisplayMode(.inline)
     }
 }

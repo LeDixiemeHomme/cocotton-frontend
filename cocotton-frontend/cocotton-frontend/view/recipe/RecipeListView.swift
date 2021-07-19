@@ -20,7 +20,7 @@ struct RecipeListView: View {
             }
         }
         .onAppear{
-            self.recipes = recipeController.loadRecipesFromJson()
+            self.recipes = recipeController.findRecipes()
         }
         .navigationTitle("Recipe list")
         .navigationBarTitleDisplayMode(.inline)

@@ -19,6 +19,7 @@
 		8B54BFBA268B27A8007EA961 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54BFB9268B27A8007EA961 /* Category.swift */; };
 		8B54BFBF268B3A19007EA961 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54BFBE268B3A19007EA961 /* Role.swift */; };
 		8B5828FE2689178F00C9F749 /* Ingredient .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5828FD2689178F00C9F749 /* Ingredient .swift */; };
+		8B5B0C8326A4E463005FEC39 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B0C8226A4E463005FEC39 /* ProfileDetailView.swift */; };
 		8B5E21EC269E4427005BAE25 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21EB269E4427005BAE25 /* ProfileController.swift */; };
 		8B5E21F1269F184E005BAE25 /* TokenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21F0269F184D005BAE25 /* TokenController.swift */; };
 		8B5E21F6269F6863005BAE25 /* InitialTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E21F5269F6863005BAE25 /* InitialTabView.swift */; };
@@ -37,13 +38,12 @@
 		8B62B26D268BBEEE0046C07C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B26C268BBEEE0046C07C /* Profile.swift */; };
 		8B62B272268BBEFF0046C07C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B271268BBEFF0046C07C /* Recipe.swift */; };
 		8B62B277268BBF090046C07C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B276268BBF090046C07C /* Session.swift */; };
-		8B62B287268BC7150046C07C /* FileTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B286268BC7150046C07C /* FileTemp.swift */; };
 		8B62B2B12698BFC40046C07C /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2B02698BFC40046C07C /* RestManager.swift */; };
-		8B62B2BE269A2C600046C07C /* FileTempController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2BD269A2C600046C07C /* FileTempController.swift */; };
 		8B62B2E6269AF2560046C07C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2E5269AF2560046C07C /* LoginView.swift */; };
 		8B62B2EE269B27F20046C07C /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2ED269B27F20046C07C /* AuthController.swift */; };
 		8B62B2F3269B4B870046C07C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2F2269B4B870046C07C /* RegisterView.swift */; };
 		8B62B2F8269B4DEF0046C07C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62B2F7269B4DEF0046C07C /* MainView.swift */; };
+		8BC227FC26A4F576000A1366 /* RecipeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC227FB26A4F576000A1366 /* RecipeCreateView.swift */; };
 		8BC2AE3926A0D6D300D793DF /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2AE3826A0D6D300D793DF /* RecipeListView.swift */; };
 		8BC2AE3F26A0D9A900D793DF /* RecipeRowViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2AE3E26A0D9A900D793DF /* RecipeRowViewElement.swift */; };
 		8BC2AE4426A0D9BE00D793DF /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2AE4326A0D9BE00D793DF /* RecipeDetailView.swift */; };
@@ -90,6 +90,7 @@
 		8B54BFB9268B27A8007EA961 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		8B54BFBE268B3A19007EA961 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		8B5828FD2689178F00C9F749 /* Ingredient .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient .swift"; sourceTree = "<group>"; };
+		8B5B0C8226A4E463005FEC39 /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
 		8B5E21EB269E4427005BAE25 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		8B5E21F0269F184D005BAE25 /* TokenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenController.swift; sourceTree = "<group>"; };
 		8B5E21F5269F6863005BAE25 /* InitialTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialTabView.swift; sourceTree = "<group>"; };
@@ -108,13 +109,12 @@
 		8B62B26C268BBEEE0046C07C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8B62B271268BBEFF0046C07C /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8B62B276268BBF090046C07C /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		8B62B286268BC7150046C07C /* FileTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTemp.swift; sourceTree = "<group>"; };
 		8B62B2B02698BFC40046C07C /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
-		8B62B2BD269A2C600046C07C /* FileTempController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTempController.swift; sourceTree = "<group>"; };
 		8B62B2E5269AF2560046C07C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8B62B2ED269B27F20046C07C /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		8B62B2F2269B4B870046C07C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8B62B2F7269B4DEF0046C07C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8BC227FB26A4F576000A1366 /* RecipeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCreateView.swift; sourceTree = "<group>"; };
 		8BC2AE3826A0D6D300D793DF /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		8BC2AE3E26A0D9A900D793DF /* RecipeRowViewElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRowViewElement.swift; sourceTree = "<group>"; };
 		8BC2AE4326A0D9BE00D793DF /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
@@ -248,6 +248,7 @@
 				8BC2AE3826A0D6D300D793DF /* RecipeListView.swift */,
 				8BC2AE3E26A0D9A900D793DF /* RecipeRowViewElement.swift */,
 				8BC2AE4326A0D9BE00D793DF /* RecipeDetailView.swift */,
+				8BC227FB26A4F576000A1366 /* RecipeCreateView.swift */,
 			);
 			path = recipe;
 			sourceTree = "<group>";
@@ -278,7 +279,6 @@
 				8B62B26C268BBEEE0046C07C /* Profile.swift */,
 				8B62B271268BBEFF0046C07C /* Recipe.swift */,
 				8B62B276268BBF090046C07C /* Session.swift */,
-				8B62B286268BC7150046C07C /* FileTemp.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -314,6 +314,7 @@
 				8B5E21F5269F6863005BAE25 /* InitialTabView.swift */,
 				8BC2AE4E26A0E10400D793DF /* CircleImageViewElement.swift */,
 				8B5F375D26A33F730011D89A /* StatsView.swift */,
+				8B5B0C8226A4E463005FEC39 /* ProfileDetailView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -322,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				8B62B2B02698BFC40046C07C /* RestManager.swift */,
-				8B62B2BD269A2C600046C07C /* FileTempController.swift */,
 				8B62B2ED269B27F20046C07C /* AuthController.swift */,
 				8B5E21EB269E4427005BAE25 /* ProfileController.swift */,
 				8B5E21F0269F184D005BAE25 /* TokenController.swift */,
@@ -589,7 +589,6 @@
 				8BC2AE4F26A0E10400D793DF /* CircleImageViewElement.swift in Sources */,
 				8B5F373D26A32CBB0011D89A /* CommentListView.swift in Sources */,
 				8B5E21F1269F184E005BAE25 /* TokenController.swift in Sources */,
-				8B62B287268BC7150046C07C /* FileTemp.swift in Sources */,
 				8B62B268268BBEE00046C07C /* Comment.swift in Sources */,
 				8B540D72269B78FD00B3DC2B /* LoadingView.swift in Sources */,
 				8B5F375926A32FE30011D89A /* CommentRowViewElement.swift in Sources */,
@@ -603,7 +602,6 @@
 				8B5E21F6269F6863005BAE25 /* InitialTabView.swift in Sources */,
 				8B5F371526A31B8F0011D89A /* IngredientDetailView.swift in Sources */,
 				8B62B2EE269B27F20046C07C /* AuthController.swift in Sources */,
-				8B62B2BE269A2C600046C07C /* FileTempController.swift in Sources */,
 				8B62B2E6269AF2560046C07C /* LoginView.swift in Sources */,
 				8B54BFBA268B27A8007EA961 /* Category.swift in Sources */,
 				8B62B2F8269B4DEF0046C07C /* MainView.swift in Sources */,
@@ -611,7 +609,9 @@
 				8BC2AE4426A0D9BE00D793DF /* RecipeDetailView.swift in Sources */,
 				8BC2AE3F26A0D9A900D793DF /* RecipeRowViewElement.swift in Sources */,
 				8B62B272268BBEFF0046C07C /* Recipe.swift in Sources */,
+				8BC227FC26A4F576000A1366 /* RecipeCreateView.swift in Sources */,
 				8BC2AE3926A0D6D300D793DF /* RecipeListView.swift in Sources */,
+				8B5B0C8326A4E463005FEC39 /* ProfileDetailView.swift in Sources */,
 				8B62B2F3269B4B870046C07C /* RegisterView.swift in Sources */,
 				8B62B2B12698BFC40046C07C /* RestManager.swift in Sources */,
 				8B62B277268BBF090046C07C /* Session.swift in Sources */,

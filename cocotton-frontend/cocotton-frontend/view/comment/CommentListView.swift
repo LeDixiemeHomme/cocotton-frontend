@@ -23,7 +23,7 @@ struct CommentListView: View {
             }
             .frame(height: 300)
             .onAppear{
-                self.comments = commentController.loadCommentsFromJson()
+                self.comments = commentController.findComments()
             }
         }
         .padding(.vertical)

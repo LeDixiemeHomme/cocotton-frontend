@@ -9,7 +9,8 @@ target 'cocotton-frontend' do
   # Pods for cocotton-frontend
   
   pod 'SwiftKeychainWrapper', '~> 4.0'
-
+  pod 'JWTDecode', '~> 2.6'
+  
   target 'cocotton-frontendTests' do
     inherit! :search_paths
     # Pods for testing
