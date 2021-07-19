@@ -47,7 +47,7 @@ struct InitialTabView: View {
                     case 2:
                         Text("Main page").font(.headline)
                     case 3:
-                        Text("Add recipe").font(.headline)
+                        Text("Add recipe (Work in progress ...)").font(.headline)
                     case 4:
                         Text("User info").font(.headline)
                     default:

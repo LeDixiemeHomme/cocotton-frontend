@@ -9,14 +9,14 @@ import SwiftUI
 
 struct RecipeListView: View {
     
-    @State private var recipes = [Recipe]()
+    @State  private var recipes = [Recipe]()
     
     private let recipeController: RecipeController = RecipeController()
     
     var body: some View {
         List(recipes) { recipe in
             NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
-                RecipeRowViewElement(recipe: recipe)
+                RecipeRowViewElement(recipe: recipe, recipeNumber: recipes.firstIndex(of: recipe)!+1)
             }
         }
         .onAppear{
