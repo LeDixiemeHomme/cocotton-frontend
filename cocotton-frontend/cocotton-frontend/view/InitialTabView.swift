@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import JWTDecode
 
 struct InitialTabView: View {
     
@@ -26,11 +27,11 @@ struct InitialTabView: View {
                         RecipeListView().tabItem {
                             Label("Recipes", systemImage: "list.dash")}.tag(1)
                         MainView().tabItem {
-                            Label("Main Page", systemImage: "m.square")}.tag(3)
-                        MainView().tabItem {
-                            Label("Add Recipe", systemImage: "note.text.badge.plus")}.tag(2)
-//                        MainView().tabItem {
-//                            Label("Settings", systemImage: "gearshape.fill")}.tag(4)
+                            Label("Main Page", systemImage: "m.square")}.tag(2)
+                        RecipeCreateView().tabItem {
+                            Label("Add Recipe", systemImage: "note.text.badge.plus")}.tag(3)
+                        ProfileDetailView().tabItem {
+                            Label("User Info", systemImage: "person.fill")}.tag(4)
                     }
                     .onAppear() {
                         UITabBar.appearance().backgroundColor = .blue
@@ -42,26 +43,23 @@ struct InitialTabView: View {
                 ToolbarItem(placement: .principal) {
                     switch tabSelection{
                     case 1:
-                        Text("Recipe list").font(.headline)
+                        Text("Recipe list").font(.	headline)
                     case 2:
-                        Text("Add recipe").font(.headline)
-                    case 3:
                         Text("Main page").font(.headline)
+                    case 3:
+                        Text("Add recipe").font(.headline)
+                    case 4:
+                        Text("User info").font(.headline)
                     default:
                         Text("Err").font(.headline)
                     }
                 }
             }
             .onAppear{
-                print("appear InitialTabView")
-                print("gestion du passage par le login ici")
-    //                shouldLogin = !TokenController().isWorkingToken()
-                shouldLogin = !TokenController().isTokenWrapped()
-                print("\"" + shouldLogin.description + "\" après le test de la présence du token")
-            }.onDisappear(perform: {
-                print("disappear InitialTabView")
-            })
+                shouldLogin = !TokenController().isWorkingToken()
+            }
     }
+    
 }
 
 extension UITabBarController {
@@ -77,7 +75,7 @@ extension UITabBarController {
 
 struct InitialTabView_Previews: PreviewProvider {
     static var previews: some View {
-        InitialTabView(tabSelection: 3)
+        InitialTabView(tabSelection: 2)
     }
 }
 	
