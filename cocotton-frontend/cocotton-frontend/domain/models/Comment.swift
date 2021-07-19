@@ -8,11 +8,13 @@
 import Foundation
 
 struct Comment: Codable, Identifiable {
-    var id: String?
-    var content: String?
-    var userId: String?
+    var id: String
+    var content: String
+    var userId: String
     
-    mutating func setUserId(id: String) {
-        self.userId = id
+    init(id: String, content: String, userId: String) {
+        self.id = id
+        self.content = content
+        self.userId = userId
     }
 }
