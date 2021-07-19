@@ -47,12 +47,8 @@ class AuthController {
         let semaphore = DispatchSemaphore(value: 0)
         
         rest.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
-        
-        print("a decommenter avant de push")
-//        rest.httpBodyParameters.add(value: loginCredential.username, forKey: "username")
-//        rest.httpBodyParameters.add(value: loginCredential.password, forKey: "password")
-        rest.httpBodyParameters.add(value: "swiftben", forKey: "username")
-        rest.httpBodyParameters.add(value: "Azerty1$", forKey: "password")
+        rest.httpBodyParameters.add(value: loginCredential.username, forKey: "username")
+        rest.httpBodyParameters.add(value: loginCredential.password, forKey: "password")
 
         guard let url = URL(string: API_BASE_URL + AUTH_TARGET + "login") else { return nil }
         
