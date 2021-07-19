@@ -15,7 +15,7 @@ struct RecipeRowViewElement: View {
             Image("recipe_row_image")
                 .resizable()
                 .frame(width: 50, height: 50)
-            Text(recipe.title!)
+            Text(recipe.title)
 
             Spacer()
         }
@@ -24,6 +24,6 @@ struct RecipeRowViewElement: View {
 
 struct RecipeRowView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeRowViewElement(recipe: Recipe())
+        RecipeRowViewElement(recipe: Recipe(id: "", title: "", people: 1, ingredients: ["String"], steps: ["String"], userId: ""))
     }
 }

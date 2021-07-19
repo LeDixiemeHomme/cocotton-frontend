@@ -61,12 +61,6 @@ struct LoadingView: View {
                 .aspectRatio(contentMode: .fill)
                 .blur(radius: 2)
         ).edgesIgnoringSafeArea(.all)
-        .onAppear(perform: {
-            print("appear LoadingView")
-        })
-        .onDisappear(perform: {
-            print("disappear LoadingView")
-        })
     }
 }
 

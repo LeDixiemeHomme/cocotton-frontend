@@ -40,7 +40,7 @@ struct StatsView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
-            .frame(height: 100)
+            .frame(height: 90)
             .onAppear{
                 self.commentCount = commentController.getCommentsCount()
                 self.recipeCount = recipeController.getRecipesCount()

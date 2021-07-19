@@ -21,11 +21,11 @@ struct IngredientDetailView: View {
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading) { // VStack 1
-                Text(ingredient.name!)
+                Text(ingredient.name)
                     .font(.title)
 
                 HStack {
-                    Text(ingredient.category!)
+                    Text(ingredient.category)
                     Spacer()
                     Text("")
                 }
@@ -39,6 +39,6 @@ struct IngredientDetailView: View {
 
 struct IngredientDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        IngredientDetailView(ingredient: Ingredient())
+        IngredientDetailView(ingredient: Ingredient(id: "", name: "", category: ""))
     }
 }

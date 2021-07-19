@@ -25,20 +25,20 @@ struct RecipeDetailView: View {
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading) { // VStack 1
-                Text(recipe.title!)
+                Text(recipe.title)
                     .font(.title)
 
                 HStack {
                     Text("Added by: ")
                     Spacer()
-                    Text(self.profileController.findProfileByIdFromSample(id: recipe.userId!)!.username!)
+                    Text(self.profileController.findProfileById(profileId: recipe.userId)!.username)
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 
                 Divider()
 
-                Text("Ingredients for \(recipe.title!)")
+                Text("Ingredients for \(recipe.title)")
                     .font(.title2)
                 List(ingredients) { ingredient in
                     NavigationLink(destination: IngredientDetailView(ingredient: ingredient)) {
@@ -47,16 +47,14 @@ struct RecipeDetailView: View {
                 }
                 .frame(height: 200)
                 .onAppear{
-                    self.ingredients = ingredientController.findAllIngredientsOfARecipe(ingredientsId: recipe.ingredients!)
-                    print(recipe)
-                    print(ingredients)
+                    self.ingredients = ingredientController.findAllIngredientsOfARecipe(ingredientsId: recipe.ingredients)
                 }
                 
                 Divider()
 
-                Text("Steps for \(recipe.title!)")
+                Text("Steps for \(recipe.title)")
                     .font(.title2)
-                List(recipe.steps!, id: \.self) { step in
+                List(recipe.steps, id: \.self) { step in
                     Text(step)
                 }
                 .frame(height: 200	)
@@ -64,13 +62,13 @@ struct RecipeDetailView: View {
             .padding()
             
         } // end scrollview 1
-        .navigationTitle(recipe.title!)
+        .navigationTitle(recipe.title)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeDetailView(recipe: Recipe())
+        RecipeDetailView(recipe: Recipe(id: "", title: "", people: 1, ingredients: ["String"], steps: ["String"], userId: ""))
     }
 }

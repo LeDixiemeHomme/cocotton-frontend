@@ -136,7 +136,7 @@ struct RegisterView: View {
             } // end else 1
             
             NavigationLink(
-                destination: InitialTabView(tabSelection: 3),
+                destination: InitialTabView(tabSelection: 2),
                 isActive: $isCredentialsCorrect,
                 label: {})
             
@@ -149,16 +149,14 @@ struct RegisterView: View {
         ).edgesIgnoringSafeArea(.all)
         .alert(isPresented: $displayAlert, content: {
             self.alert
-        }).onAppear(perform: {
-            print("disappear RegisterView")
-        }).onDisappear(perform: {
-            print("disappear RegisterView")
         })
     }
     
     func viewBehavior() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
         if username != "" && password != "" && firstName != "" && lastName != "" && email != "" {
-            tryRegister(registerCredential: RegisterCredential(username: self.username, password: self.password, email: self.email, firstName: self.firstName, lastName: self.lastName, birthDate: self.birthDate))
+            tryRegister(registerCredential: RegisterCredential(username: self.username, password: self.password, email: self.email, firstName: self.firstName, lastName: self.lastName, birthDate: dateFormatter.string(from: self.birthDate)))
         } else {
             alert =  Alert(
                     title: Text("Empty mandatory fields"),
@@ -171,11 +169,11 @@ struct RegisterView: View {
     func tryRegister(registerCredential: RegisterCredential) -> Void {
         isLoading = true
         
-        let dateFormatter = DateFormatter()
-        let profile: Profile = Profile(lastName: registerCredential.lastName, firstName: registerCredential.firstName, email: registerCredential.email, username: registerCredential.username, password: registerCredential.password, birthDate: dateFormatter.string(from: registerCredential.birthDate))
+        let profile: Profile = Profile(id: "", lastName: registerCredential.lastName, firstName: registerCredential.firstName, email: registerCredential.email, username: registerCredential.username, birthDate: registerCredential.birthDate)
         
-        if let unwrappedProfileId: String = authController.register(profile: profile) {
+        if let unwrappedProfileId: String = authController.register(registerCredential: registerCredential) {
             
+            KeychainWrapper.standard[.tokenSession] = authController.login(loginCredential: LoginCredential(username: registerCredential.username, password: registerCredential.password))!
             KeychainWrapper.standard[.profileId] = unwrappedProfileId
             KeychainWrapper.standard[.lastName] = profile.lastName
             KeychainWrapper.standard[.firstName] = profile.firstName
@@ -189,25 +187,15 @@ struct RegisterView: View {
             }
             return
         } else {
-            
-            print("ici set le faux token ")
-            KeychainWrapper.standard[.tokenSession] = "fake-token"
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 isLoading = false
-                isCredentialsCorrect = true
+                alert = Alert(
+                    title: Text("Error while registration"),
+                    message: Text("Your credentials are wrong. Try other value !")
+                )
+                displayAlert = true
+                return
             }
-            return
-                
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-//                isLoading = false
-//                alert = Alert(
-//                    title: Text("Wrong credentials"),
-//                    message: Text("Your credentials are wrong. Try to create an account !")
-//                )
-//                displayAlert = true
-//                return
-//            }
         }
     }
 }
@@ -226,9 +214,9 @@ struct RegisterCredential: Codable {
     let email: String
     let firstName: String
     let lastName: String
-    let birthDate: Date
+    let birthDate: String
     
-    init(username: String, password: String, email: String, firstName: String, lastName: String, birthDate: Date) {
+    init(username: String, password: String, email: String, firstName: String, lastName: String, birthDate: String) {
         self.username = username
         self.password = password
         self.email = email

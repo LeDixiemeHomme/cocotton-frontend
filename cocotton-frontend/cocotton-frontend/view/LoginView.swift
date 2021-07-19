@@ -16,18 +16,19 @@ struct LoginView: View {
     @State private var isLoading = false
     @State public var isCredentialsCorrect = false
     
-    @State public var displayAlert = false
-    @State public var alert: Alert = Alert(title: Text("Empty alert"))
+    @State private var displayAlert = false
+    @State private var alert: Alert = Alert(title: Text("Empty alert"))
     private let backGround: String = "login_background"
     
     private let authController: AuthController = AuthController()
     private let profileController: ProfileController = ProfileController()
+    private let tokenController: TokenController = TokenController()
     
     var body: some View {
         VStack(spacing: 15){ //VStack 1
             if isLoading { //if 1
                 LoadingView(textAction: "Loging in", backGround: self.backGround)
-            } // end of 1
+            } // end if 1
             else { // else 1
                 
                 Spacer()
@@ -106,7 +107,7 @@ struct LoginView: View {
             } // end else 1
             
             NavigationLink(
-                destination: InitialTabView(tabSelection: 3),
+                destination: InitialTabView(tabSelection: 2).navigationBarBackButtonHidden(true),
                 isActive: $isCredentialsCorrect,
                 label: {})
             
@@ -121,53 +122,40 @@ struct LoginView: View {
         .alert(isPresented: $displayAlert, content: {
             self.alert
         })
-        .onAppear(perform: {
-            print("appear LoginView")
-        }).onDisappear(perform: {
-            print("disappear LoginView")
-        })
     }
     
     func viewBehaviorLogin() {
-        tryLogin(loginCredential: LoginCredential(username: self.username, password: self.password))
-        print("decommenter pour reactiver l'alert des empty fields")
-//        if username != "" && password != "" {
-//            tryLogin(loginCredential: LoginCredential(username: self.username, password: self.password))
-//        } else {
-//            alert =  Alert(
-//                    title: Text("Empty mandatory fields"),
-//                    message: Text("Mandatory fields must be filled.")
-//                )
-//            displayAlert = true
-//        }
+        if username != "" && password != "" {
+            tryLogin(loginCredential: LoginCredential(username: self.username, password: self.password))
+        } else {
+            alert =  Alert(
+                    title: Text("Empty mandatory fields"),
+                    message: Text("Mandatory fields must be filled.")
+                )
+            displayAlert = true
+        }
     }
     
     func tryLogin(loginCredential: LoginCredential) -> Void {
+        
         isLoading = true
         
         if let unwrappedToken: String = authController.login(loginCredential: loginCredential) {
             KeychainWrapper.standard[.tokenSession] = unwrappedToken
 
-            if let _: String = KeychainWrapper.standard[.profileId], let _: String = KeychainWrapper.standard[.lastName],
-               let _: String = KeychainWrapper.standard[.firstName], let _: String = KeychainWrapper.standard[.email],
-               let _: String = KeychainWrapper.standard[.username], let _: String = KeychainWrapper.standard[.birthDate]
+            if let fetchedProfile: Profile = profileController.findProfileById(profileId: try! tokenController.tokenToProfileId(token: KeychainWrapper.standard[.tokenSession]!)!)
             {
-                
-            } else {
-                if let fetchedProfile: Profile = profileController.findProfileByToken(token: KeychainWrapper.standard[.tokenSession]!)
-                {
-                    KeychainWrapper.standard[.profileId] = fetchedProfile.id
-                    KeychainWrapper.standard[.lastName] = fetchedProfile.lastName
-                    KeychainWrapper.standard[.firstName] = fetchedProfile.firstName
-                    KeychainWrapper.standard[.email] = fetchedProfile.email
-                    KeychainWrapper.standard[.username] = fetchedProfile.username
-                    KeychainWrapper.standard[.birthDate] = fetchedProfile.birthDate
-                }
+                KeychainWrapper.standard[.profileId] = fetchedProfile.id
+                KeychainWrapper.standard[.lastName] = fetchedProfile.lastName
+                KeychainWrapper.standard[.firstName] = fetchedProfile.firstName
+                KeychainWrapper.standard[.email] = fetchedProfile.email
+                KeychainWrapper.standard[.username] = fetchedProfile.username
+                KeychainWrapper.standard[.birthDate] = fetchedProfile.birthDate
             }
-            print("ici remettre a 3.0")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                isLoading = false
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 isCredentialsCorrect = true
+                isLoading = false
             }
             return
         } else {
@@ -182,7 +170,6 @@ struct LoginView: View {
             }
         }
     }
-    
 }
 
 struct LoginView_Previews: PreviewProvider {
